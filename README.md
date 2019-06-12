@@ -14,13 +14,11 @@
 
 **Follow**: [LinkedIn - Ian Brooks PhD](https://www.linkedin.com/in/ianrbrooksphd/)
 
-**Entire Project Inspired and/or stolen from**: [Tensorflow Tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html) 
-
 **Additional Links**:
 - [Object Detection Tutorial Link](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html "link1")
 - [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection "link2")
 - [Free Object Labeling Tool](https://github.com/tzutalin/labelImg "link3")
--[Another Great Object Detection Tutorial]( https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9 "link4")
+- [Another Great Object Detection Tutorial]( https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9 "link4")
 - [Yet Another Object Detection Tutorial](https://3sidedcube.com/guide-retraining-object-detection-models-tensorflow/ "link5")
 - [Convert Tensorflow Model for TPU](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tpu_exporters.md "link6")
 
@@ -41,7 +39,7 @@ In this project, the included scripts and images will create an Cloudera and Hor
 
 1. Download the project using the git url for [here](https://github.com/BrooksIan/LogoTL.git) 
 
-2. Install Tensorflow
+2. [Install Tensorflow](https://www.tensorflow.org/install/pip "link")
 ```bash
 pip3 install tensorflow
 pip install tensorflow
