@@ -145,5 +145,21 @@ INFO:tensorflow:global step 4: loss = 15.9959 (2.743 sec/step)
 INFO:tensorflow:global step 4: loss = 15.9959 (2.743 sec/step)
 INFO:tensorflow:global step 5: loss = 15.4355 (2.243 sec/step)
 ```
-12.  Export Model Graphs
-13.  Convert Tensorflow Model to Tensorflow Lite Model
+12.  Copy Export Inference Script To Home Dir
+```bash
+cd
+cp ~/tensorflow/models/research/object_detection/export_inference_graph.py .
+```
+13. Find the Highest Ranked Checkpoint File. Make a note of the file’s name, as it will be passed as an argument when we call the export_inference_graph.py script.
+```bash
+ls -t ~/training/model.ckpt*
+```
+14. Export Inference Graph Into Home Directory
+```bash
+cd
+python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/ssd_inception_v2_coco.config --trained_checkpoint_prefix training/model.ckpt-13302 --output_directory trained-inference-graphs/output_inference_graph_v1.pb
+```
+
+15.  Convert Tensorflow Model to Tensorflow Lite Model
+```bash
+```
