@@ -81,3 +81,30 @@ cd cocoapi/PythonAPI
 make
 cp -r pycocotools ~/tensorflow/models/research/
 ```
+
+8. Download Google's Protobuffer Tools
+```bash
+cd ~/tensorflow/models/research/
+# From tensorflow/models/research/
+wget -O protobuf.zip https://github.com/google/protobuf/releases/download/v3.0.0/protoc-3.0.0-linux-x86_64.zip
+unzip protobuf.zip
+```
+
+9. Create Protobuffers for Object Dectection Model
+```bash
+# From tensorflow/models/research/
+cd ~/tensorflow/models/research/
+./bin/protoc object_detection/protos/*.proto --python_out=.
+```
+
+10.  Export Path to the Protobuffer Output 
+```bash
+# From tensorflow/models/research/
+cd ~/tensorflow/models/research/
+export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
+```
+
+11. Retrain Object Detection Model 
+```bash
+python3 train.py --logtostderr --train_dir=training/ --pipeline_config_path=training/ssd_inception_v2_coco.config
+```
