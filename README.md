@@ -1,7 +1,4 @@
-# LogoTL
-
-https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html 
-
+# Cloudera and Hortonworks Logo - Object Detection
 ## Data Science in Tensorflow
 ### Object Detection
 #### Retrain Existing Tensorflow Models
@@ -18,6 +15,9 @@ https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/traini
 **Follow**: [LinkedIn - Ian Brooks PhD](https://www.linkedin.com/in/ianrbrooksphd/)
 
 **Entire Project Inspired and/or stolen from**: [Tensorflow Tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html) 
+
+**Additional Links**:
+[Object Detection Link](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html "link1")
 
 ## Corporate Logo Object Detection
 
