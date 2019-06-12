@@ -21,7 +21,7 @@
 
 ## Corporate Logo Object Detection
 
-![objectdetection](https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjA3dOD1eTiAhWHoJ4KHROpBWcQjRx6BAgBEAU&url=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2018%2F06%2Funderstanding-building-object-detection-model-python%2F&psig=AOvVaw2vYlBn3UbRSaxf-nD0xRAM&ust=1560453658635232 "objdect")
+![objectdetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/test/both.jpg "objdect")
 
 This Github repo is designed to be optmized for Cloudera Data Science Workbench (CDSW), but it's not required.  
 
