@@ -1,6 +1,6 @@
 # Cloudera and Hortonworks Logo - Object Detection
-## Data Science in Tensorflow
-### Object Detection
+## Data Science
+### Object Detection Using Tensorflow
 #### Retrain Existing Tensorflow Models
 
 **Level**: Moderate
