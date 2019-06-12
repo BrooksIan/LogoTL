@@ -41,6 +41,43 @@ In this project, the included scripts and images will create an Cloudera and Hor
 pip3 install tensorflow
 pip install tensorflow
 ```
+3.  Download Tensorflow Models Git Repo
+```bash
+#Clone Tensorflow Model Git Repo
+mkdir tensorflow
+cd tensorflow
+git clone https://github.com/tensorflow/models.git
+```
 
+4. Convert XML Image Labels to CSV
+```bash
+#Convert XML Labels to CSV
+python xml_to_csv.py -i Images/train -o annotations/train_labels.csv
+python xml_to_csv.py -i Images/test -o annotations/test_labels.csv
+```
 
-3. Install
+5. Convert CSV Labels to Tensorflow Record
+```bash
+#Convert CSV to TF-Record
+python3 generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=annotations/train_labels.csv --img_path=Images/train  --output_path=annotations/train.record
+python3 generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=annotations/test_labels.csv --img_path=Images/test  --output_path=annotations/test.record
+```
+
+6. Download Original Tensorflow Model
+```bash
+#Download Original SSD Tensorflow Model
+cd
+mkdir pre-trained-model
+cd pre-trained-model
+wget http://download.tensorflow.org/models/object_detection/ssd_inception_v2_coco_2018_01_28.tar.gz
+tar -xzf ssd_inception_v2_coco_2018_01_28.tar.gz
+```
+
+7. Install COCO API
+```bash
+#COCO API Install
+git clone https://github.com/cocodataset/cocoapi.git
+cd cocoapi/PythonAPI
+make
+cp -r pycocotools ~/tensorflow/models/research/
+```
