@@ -1,0 +1,11 @@
+filename,width,height,class,xmin,ymin,xmax,ymax
+both.jpg,1600,557,Cloudera,133,227,642,338
+both.jpg,1600,557,Hortonworks,957,168,1468,366
+c31.jpg,1200,799,Cloudera,427,208,570,260
+c31.jpg,1200,799,Cloudera,834,100,1167,184
+hw36.jpg,646,222,Hortonworks,139,9,500,154
+hw35.jpg,353,143,Hortonworks,2,1,353,128
+c32.jpg,1200,799,Cloudera,313,343,422,365
+c32.jpg,1200,799,Cloudera,506,275,734,343
+c33.jpg,1080,1080,Cloudera,332,36,818,133
+hw37.jpg,271,186,Hortonworks,24,47,249,145
