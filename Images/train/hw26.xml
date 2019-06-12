@@ -1,0 +1,26 @@
+<annotation>
+	<folder>images</folder>
+	<filename>hw26.jpg</filename>
+	<path>/Users/ibrooks/Images/TransferlearningImages/images/hw26.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1817</width>
+		<height>662</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Hortonworks</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>180</xmin>
+			<ymin>16</ymin>
+			<xmax>1667</xmax>
+			<ymax>467</ymax>
+		</bndbox>
+	</object>
+</annotation>

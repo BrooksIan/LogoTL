@@ -1,0 +1,26 @@
+<annotation>
+	<folder>images</folder>
+	<filename>c17.jpeg</filename>
+	<path>/Users/ibrooks/Images/TransferlearningImages/images/c17.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>318</width>
+		<height>159</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Cloudera</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>31</xmin>
+			<ymin>15</ymin>
+			<xmax>102</xmax>
+			<ymax>36</ymax>
+		</bndbox>
+	</object>
+</annotation>
