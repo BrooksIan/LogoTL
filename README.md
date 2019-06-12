@@ -49,14 +49,14 @@ cd tensorflow
 git clone https://github.com/tensorflow/models.git
 ```
 
-4. Convert XML Image Labels to CSV
+4. Convert XML Image Labels to CSV (Optional - CSV files have been provided in Annotations Dir)
 ```bash
 #Convert XML Labels to CSV
 python xml_to_csv.py -i Images/train -o annotations/train_labels.csv
 python xml_to_csv.py -i Images/test -o annotations/test_labels.csv
 ```
 
-5. Convert CSV Labels to Tensorflow Record
+5. Convert CSV Labels to Tensorflow Record 
 ```bash
 #Convert CSV to TF-Record
 python3 generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=annotations/train_labels.csv --img_path=Images/train  --output_path=annotations/train.record
@@ -97,14 +97,14 @@ cd ~/tensorflow/models/research/
 ./bin/protoc object_detection/protos/*.proto --python_out=.
 ```
 
-10.  Export Path to the Protobuffer Output 
+10.  Export Path to the Protobuffer Output Library
 ```bash
 # From tensorflow/models/research/
 cd ~/tensorflow/models/research/
 export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 ```
 
-11. Retrain Object Detection Model 
+11. Retrain Object Detection Model to Create New Model
 ```bash
 python3 train.py --logtostderr --train_dir=training/ --pipeline_config_path=training/ssd_inception_v2_coco.config
 ```
@@ -138,3 +138,5 @@ INFO:tensorflow:global step 4: loss = 15.9959 (2.743 sec/step)
 INFO:tensorflow:global step 4: loss = 15.9959 (2.743 sec/step)
 INFO:tensorflow:global step 5: loss = 15.4355 (2.243 sec/step)
 ```
+12.  Export Model Graphs
+13.  Convert Tensorflow Model to Tensorflow Lite Model
