@@ -30,4 +30,17 @@ In this project, the included scripts and images will create an Cloudera and Hor
 ## CDSW Run Instructions
 
 1.  In CSDW, download the project using the git url for [here](https://github.com/BrooksIan/LogoTL.git) 
-2. 
+2.  Open a new session, run the CDSW-build.sh script at the terminal prompt. 
+
+## Command Line Instructions
+
+1. Download the project using the git url for [here](https://github.com/BrooksIan/LogoTL.git) 
+
+2. Install Tensorflow
+```bash
+pip3 install tensorflow
+pip install tensorflow
+```
+
+
+3. Install
