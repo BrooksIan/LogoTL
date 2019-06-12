@@ -17,7 +17,12 @@
 **Entire Project Inspired and/or stolen from**: [Tensorflow Tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html) 
 
 **Additional Links**:
-[Object Detection Link](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html "link1")
+[Object Detection Tutorial Link](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html "link1")
+[Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection "link2")
+[Free Object Labeling Tool](https://github.com/tzutalin/labelImg "link3")
+[Another Great Object Detection Tutorial]( https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9 "link4")
+[Yet Another Object Detection Tutorial](https://3sidedcube.com/guide-retraining-object-detection-models-tensorflow/ "link5")
+[Convert Tensorflow Model for TPU](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tpu_exporters.md "link6")
 
 ## Corporate Logo Object Detection
 
