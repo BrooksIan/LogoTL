@@ -108,7 +108,7 @@ export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 ```bash
 python3 train.py --logtostderr --train_dir=training/ --pipeline_config_path=training/ssd_inception_v2_coco.config
 ```
-  If Everything goes to plan, then you should see this type of output with steps.  Please keep in mind this could take hours to complete:
+  If Everything goes to plan, then you should see this type of output with steps.  Please keep in mind this could take hours if using CPU(s) to complete:
 
 ```bash
 Use standard file APIs to check for files with this prefix.
