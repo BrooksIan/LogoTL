@@ -44,12 +44,15 @@ In this project, the included scripts and images will create an Cloudera and Hor
 pip3 install tensorflow
 pip install tensorflow
 ```
-3.  Download Tensorflow Models Git Repo
+3.  Download Tensorflow Models Git Repo and Build Project
 ```bash
 #Clone Tensorflow Model Git Repo
 mkdir tensorflow
 cd tensorflow
 git clone https://github.com/tensorflow/models.git
+cd /home/cdsw/tensorflow/models/research
+python setup.py build
+python setup.py install
 ```
 
 4. Convert XML Image Labels to CSV (Optional - CSV files have been provided in Annotations Dir)
