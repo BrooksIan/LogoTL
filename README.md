@@ -157,6 +157,26 @@ cp ~/tensorflow/models/research/object_detection/export_inference_graph.py .
 ```bash
 ls -t ~/training/model.ckpt*
 ```
+If training was sucessful, then results will be displayed.  Please keep in mind, the numeric values will be different. 
+```bash
+$ ls -t ~/training/model.ckpt*
+/home/cdsw/training/model.ckpt-4041.meta
+/home/cdsw/training/model.ckpt-4041.index
+/home/cdsw/training/model.ckpt-4041.data-00000-of-00001
+/home/cdsw/training/model.ckpt-3769.meta
+/home/cdsw/training/model.ckpt-3769.index
+/home/cdsw/training/model.ckpt-3769.data-00000-of-00001
+/home/cdsw/training/model.ckpt-3497.meta
+/home/cdsw/training/model.ckpt-3497.index
+/home/cdsw/training/model.ckpt-3497.data-00000-of-00001
+/home/cdsw/training/model.ckpt-3225.meta
+/home/cdsw/training/model.ckpt-3225.index
+/home/cdsw/training/model.ckpt-3225.data-00000-of-00001
+/home/cdsw/training/model.ckpt-2954.meta
+/home/cdsw/training/model.ckpt-2954.index
+/home/cdsw/training/model.ckpt-2954.data-00000-of-00001
+```
+
 14. Export Inference Graph Into Home Directory
 ```bash
 cd
