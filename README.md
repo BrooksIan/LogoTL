@@ -20,6 +20,7 @@
 - [Yet Another Object Detection Tutorial](https://3sidedcube.com/guide-retraining-object-detection-models-tensorflow/ "link5")
 - [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection "link2")
 - [Free Object Labeling Tool](https://github.com/tzutalin/labelImg "link3")
+- [Exporting a trained model for inference](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models.md "link7")
 - [Convert Tensorflow Model for TPU](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tpu_exporters.md "link6")
 
 ## Corporate Logo Object Detection
@@ -44,12 +45,15 @@ In this project, the included scripts and images will create an Cloudera and Hor
 pip3 install tensorflow
 pip install tensorflow
 ```
-3.  Download Tensorflow Models Git Repo
+3.  Download Tensorflow Models Git Repo and Build Project
 ```bash
 #Clone Tensorflow Model Git Repo
 mkdir tensorflow
 cd tensorflow
 git clone https://github.com/tensorflow/models.git
+cd /home/cdsw/tensorflow/models/research
+python setup.py build
+python setup.py install
 ```
 
 4. Convert XML Image Labels to CSV (Optional - CSV files have been provided in Annotations Dir)
@@ -145,5 +149,47 @@ INFO:tensorflow:global step 4: loss = 15.9959 (2.743 sec/step)
 INFO:tensorflow:global step 4: loss = 15.9959 (2.743 sec/step)
 INFO:tensorflow:global step 5: loss = 15.4355 (2.243 sec/step)
 ```
-12.  Export Model Graphs
-13.  Convert Tensorflow Model to Tensorflow Lite Model
+12.  Copy Export Inference Script To Home Dir
+```bash
+cd
+cp ~/tensorflow/models/research/object_detection/export_inference_graph.py .
+```
+13. Find the Highest Ranked Checkpoint File. Make a note of the file’s name, as it will be passed as an argument when we call the export_inference_graph.py script.
+```bash
+ls -t ~/training/model.ckpt*
+```
+If training was sucessful, then results will be displayed.  Please keep in mind, the numeric values will be different. 
+```bash
+$ ls -t ~/training/model.ckpt*
+/home/cdsw/training/model.ckpt-4041.meta
+/home/cdsw/training/model.ckpt-4041.index
+/home/cdsw/training/model.ckpt-4041.data-00000-of-00001
+/home/cdsw/training/model.ckpt-3769.meta
+/home/cdsw/training/model.ckpt-3769.index
+/home/cdsw/training/model.ckpt-3769.data-00000-of-00001
+/home/cdsw/training/model.ckpt-3497.meta
+/home/cdsw/training/model.ckpt-3497.index
+/home/cdsw/training/model.ckpt-3497.data-00000-of-00001
+/home/cdsw/training/model.ckpt-3225.meta
+/home/cdsw/training/model.ckpt-3225.index
+/home/cdsw/training/model.ckpt-3225.data-00000-of-00001
+/home/cdsw/training/model.ckpt-2954.meta
+/home/cdsw/training/model.ckpt-2954.index
+/home/cdsw/training/model.ckpt-2954.data-00000-of-00001
+```
+
+14. Export Inference Graph Into Home Directory
+```bash
+cd
+python3 export_inference_graph.py --input_type image_tensor --pipeline_config_path training/ssd_inception_v2_coco.config --trained_checkpoint_prefix training/model.ckpt-4041 --output_directory trained-inference-graphs/output_inference_graph_v1.pb
+```
+
+If this command is successful, then the trained inference graph will be created. 
+```bash
+ls trained-inference-graphs/
+output_inference_graph_v1.pb
+```
+
+15.  Convert Tensorflow Model to Tensorflow Lite Model
+```bash
+```
