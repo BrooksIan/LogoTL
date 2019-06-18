@@ -22,7 +22,7 @@
 - [Yet Another Object Detection Tutorial](https://3sidedcube.com/guide-retraining-object-detection-models-tensorflow/ "link5")
 - [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection "link2")
 - [Free Object Labeling Tool](https://github.com/tzutalin/labelImg "link3")
-- [Exporting a trained model for inference](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models.md "link7")
+- [Exporting Tained Model for Inference](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models.md "link7")
 - [Convert Tensorflow Model for TPU](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tpu_exporters.md "link6")
 - [Convert Tensorflow Model to TFLite](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/convert/cmdline_reference.md "link8")
 - [Online Edge TPU Compiler](https://coral.withgoogle.com/web-compiler "link9")
@@ -36,7 +36,7 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 1.  In CSDW, download the project using the git url for [here](https://github.com/BrooksIan/LogoTL.git) 
 2.  Open a new session, run the CDSW-build.sh script at the terminal prompt, which contains the following operating code. 
 
-## Getting Started Super Fast - Run at terminal prompt
+## Getting Started Super Fast - Run @ Terminal Prompt (If you feel lucky)
 ```bash
 ./scripts/setup.sh
 ./scripts/buildModel.sh
