@@ -37,7 +37,12 @@ In this project, the included scripts and images will create an Cloudera and Hor
 ## CDSW Run Instructions
 
 1.  In CSDW, download the project using the git url for [here](https://github.com/BrooksIan/LogoTL.git) 
-2.  Open a new session, run the CDSW-build.sh script at the terminal prompt. 
+2.  Open a new session, run the CDSW-build.sh script at the terminal prompt, which contains the following operating code. 
+
+```bash
+./setup.sh
+./buildModel.sh
+```
 
 ## Command Line Instructions
 
