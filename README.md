@@ -10,7 +10,8 @@
 **Language**: Python
 
 **Requirements**: 
-- Python 
+- Python 3.6
+- Tensorflow 1.13
 
 **Author**: Ian R Brooks
 
@@ -122,7 +123,7 @@ cd
 python3 train.py --logtostderr --train_dir=training/ \
 --pipeline_config_path=training/ssd_inception_v2_coco.config
 ```
-  If Everything goes to plan, then you should see this type of output with steps.  Please keep in mind this could take hours if using CPU(s) to complete:
+  If Everything goes to plan, then you should see this type of output with steps.  Please keep in mind this could take HOURS if using CPU(s) to complete:
 
 ```bash
 Use standard file APIs to check for files with this prefix.
@@ -200,7 +201,7 @@ output_inference_graph_v1.pb
 ```bash
 python3 tensorflow/models/research/object_detection/export_tflite_ssd_graph.py \
     --input_type=image_tensor \
-    --input_shape={"image_tensor":[1,600,600,3]} \
+    --input_shape={"image_tensor":[1,300,300,3]} \
     --pipeline_config_path=trained-inference-graphs/output_inference_graph_v1/pipeline.config \
     --trained_checkpoint_prefix=trained-inference-graphs/output_inference_graph_v1/model.ckpt \
     --output_directory=trainedTFLite \
