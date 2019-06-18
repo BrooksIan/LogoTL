@@ -1,8 +1,6 @@
-# Cloudera and Hortonworks Logo - Object Detection
+# Transfer Learning on Tensorflow and Tensorflow Lite Models 
 ## Data Science
 ### Object Detection on Logos Using Tensorflow
-### Transfer Learning on Tensorflow and Tensorflow Lite Models
-
 
 ![objectdetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/both.jpg "objdect")
 
