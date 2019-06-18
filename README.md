@@ -1,11 +1,10 @@
 # Cloudera and Hortonworks Logo - Object Detection
 ## Data Science
-### Object Detection Using Tensorflow
-#### Retrain Existing Tensorflow Models
+### Object Detection on Logos Using Tensorflow
+### Transfer Learning on Tensorflow and Tensorflow Lite Models
+
 
 ![objectdetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/both.jpg "objdect")
-
-**Level**: Moderate
 
 **Language**: Python
 
@@ -32,16 +31,15 @@
 
 This Github repo is designed to be optmized for Cloudera Data Science Workbench (CDSW), but it's not required.  
 
-In this project, the included scripts and images will create an Cloudera and Hortonworks logo Object Detection Tensorflow model  
-
 ## CDSW Run Instructions
 
 1.  In CSDW, download the project using the git url for [here](https://github.com/BrooksIan/LogoTL.git) 
 2.  Open a new session, run the CDSW-build.sh script at the terminal prompt, which contains the following operating code. 
 
+## Super Fast Command Line Instructions
 ```bash
-./setup.sh
-./buildModel.sh
+./scripts/setup.sh
+./scripts/buildModel.sh
 ```
 
 ## Step By Step Command Line Instructions
