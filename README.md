@@ -29,13 +29,13 @@
 
 ## Corporate Logo Object Detection
 
-This Github repo is designed to be optmized for Cloudera Data Science Workbench (CDSW), but it's not required.  
+This Github repo is designed to be optmized for Cloudera Data Science Workbench (CDSW), but it's not required  
 
 ## CDSW Run Instructions
 
 1.  In CSDW, download the project using the git url for [here](https://github.com/BrooksIan/LogoTL.git) 
 
-2.  Open a new session, run the CDSW-build.sh script at the terminal prompt, which contains the following operating code. 
+2.  Open a new session, run the CDSW-build.sh script at the terminal prompt, which contains the following operating code 
 
 ## Getting Started Super Fast (If you feel lucky)
 1. Download the project using the git url for [here](https://github.com/BrooksIan/LogoTL.git) 
