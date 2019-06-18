@@ -1,6 +1,6 @@
 ########## Project Build ######
-./setup.sh
-./buildModel.sh
+./scripts/setup.sh
+./scripts/buildModel.sh
 ##############################
 
 
