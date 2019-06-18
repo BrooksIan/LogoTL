@@ -29,6 +29,8 @@
 
 This Github repo is designed to be optmized for Cloudera Data Science Workbench (CDSW), but it's not required.  
 
+**Please Note**: When scripts that use '~\' in the path, are assuming this is the home directory of the downloaded project.  This is the default for CDSW. 
+
 ## CDSW Run Instructions
 
 1.  In CSDW, download the project using the git url for [here.](https://github.com/BrooksIan/LogoTL.git) 
