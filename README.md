@@ -3,6 +3,8 @@
 ### Object Detection Using Tensorflow
 #### Retrain Existing Tensorflow Models
 
+![objectdetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/both.jpg "objdect")
+
 **Level**: Moderate
 
 **Language**: Python
@@ -25,8 +27,6 @@
 - [Convert Tensorflow Model to TFLite](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/convert/cmdline_reference.md "link8")
 
 ## Corporate Logo Object Detection
-
-![objectdetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/test/both.jpg "objdect")
 
 This Github repo is designed to be optmized for Cloudera Data Science Workbench (CDSW), but it's not required.  
 
