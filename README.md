@@ -3,7 +3,7 @@
 ### Object Detection Using Tensorflow
 #### Retrain Existing Tensorflow Models
 
-![objectdetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/both.jpg "objdect")
+![objectdetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/both.jpg "objdect")
 
 **Level**: Moderate
 
