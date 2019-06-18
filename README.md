@@ -123,7 +123,7 @@ export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 # From Home Directory
 cd
 
-#Update Patch
+#Update PATH and PYTHONPATH
 cd
 export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research/
 export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research/slim
