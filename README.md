@@ -123,6 +123,13 @@ export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 # From Home Directory
 cd
 
+#Update Patch
+cd
+export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research/
+export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research/slim
+export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research/object_detection
+export PATH=$PATH:~/.local/bin 
+
 python3 train.py --logtostderr --train_dir=training/ \
 --pipeline_config_path=training/ssd_inception_v2_coco.config
 ```
