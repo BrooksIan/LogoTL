@@ -36,7 +36,7 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 1.  In CSDW, download the project using the git url for [here](https://github.com/BrooksIan/LogoTL.git) 
 2.  Open a new session, run the CDSW-build.sh script at the terminal prompt, which contains the following operating code. 
 
-## Super Fast Command Line Instructions
+## Getting Started Super Fast - Run at terminal prompt
 ```bash
 ./scripts/setup.sh
 ./scripts/buildModel.sh
