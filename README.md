@@ -44,7 +44,7 @@ In this project, the included scripts and images will create an Cloudera and Hor
 ./buildModel.sh
 ```
 
-## Command Line Instructions
+## Step By Step Command Line Instructions
 
 1. Download the project using the git url for [here](https://github.com/BrooksIan/LogoTL.git) 
 
