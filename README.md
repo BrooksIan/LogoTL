@@ -29,7 +29,7 @@
 
 ## Corporate Logo Object Detection
 
-This Github repo is designed to be optmized for Cloudera Data Science Workbench (CDSW), but it's not required  
+This Github repo is designed to be optmized for Cloudera Data Science Workbench (CDSW), but it's not required.  
 
 ## CDSW Run Instructions
 
