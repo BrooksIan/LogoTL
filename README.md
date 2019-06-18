@@ -65,15 +65,15 @@ python setup.py install
 4. Convert XML Image Labels to CSV (Optional - CSV files have been provided in Annotations Dir)
 ```bash
 #Convert XML Labels to CSV
-python xml_to_csv.py -i Images/train -o annotations/train_labels.csv
-python xml_to_csv.py -i Images/test -o annotations/test_labels.csv
+python ~/scipts/xml_to_csv.py -i Images/train -o ~/annotations/train_labels.csv
+python ~/sciptsxml_to_csv.py -i Images/test -o ~/annotations/test_labels.csv
 ```
 
 5. Convert CSV Labels to Tensorflow Record 
 ```bash
 #Convert CSV to TF-Record
-python3 generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=annotations/train_labels.csv --img_path=Images/train  --output_path=annotations/train.record
-python3 generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=annotations/test_labels.csv --img_path=Images/test  --output_path=annotations/test.record
+python3 ~/scipts/generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=~/annotations/train_labels.csv --img_path=Images/train  --output_path=annotations/train.record
+python3 ~/scipts/generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=~/annotations/test_labels.csv --img_path=Images/test  --output_path=~/annotations/test.record
 ```
 
 6. Download Original Tensorflow Model
@@ -130,8 +130,8 @@ export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research/slim
 export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research/object_detection
 export PATH=$PATH:~/.local/bin 
 
-python3 train.py --logtostderr --train_dir=training/ \
---pipeline_config_path=training/ssd_inception_v2_coco.config
+python3 ~/scripts/train.py --logtostderr --train_dir=~/training/ \
+--pipeline_config_path=~/training/ssd_inception_v2_coco.config
 ```
   If Everything goes to plan, then you should see this type of output with steps.  Please keep in mind this could take HOURS if using CPU(s) to complete:
 
@@ -195,25 +195,24 @@ $ ls -t ~/training/model.ckpt*
 14. Export Inference Graph Into Home Directory
 ```bash
 cd
-python3 export_inference_graph.py --input_type image_tensor \
---pipeline_config_path training/ssd_inception_v2_coco.config \
---trained_checkpoint_prefix training/model.ckpt-4041 \
---output_directory trained-inference-graphs/output_inference_graph_v1.pb
+python3 ~/scripts/export_inference_graph.py --input_type image_tensor \
+--pipeline_config_path ~/training/ssd_inception_v2_coco.config \
+--trained_checkpoint_prefix ~/training/model.ckpt-4041 \
+--output_directory ~/trained-inference-graphs/output_inference_graph_v1.pb
 ```
 
 If this command is successful, then the trained inference graph will be created. 
 ```bash
-ls trained-inference-graphs/
-output_inference_graph_v1.pb
+ls ~/trained-inference-graphs/output_inference_graph_v1.pb
 ```
 
 15.  Convert Tensorflow Model to Tensorflow Lite Model
 ```bash
-python3 tensorflow/models/research/object_detection/export_tflite_ssd_graph.py \
+python3 ~/tensorflow/models/research/object_detection/export_tflite_ssd_graph.py \
     --input_type=image_tensor \
     --input_shape={"image_tensor":[1,300,300,3]} \
-    --pipeline_config_path=trained-inference-graphs/output_inference_graph_v1/pipeline.config \
-    --trained_checkpoint_prefix=trained-inference-graphs/output_inference_graph_v1/model.ckpt \
+    --pipeline_config_path=~/trained-inference-graphs/output_inference_graph_v1/pipeline.config \
+    --trained_checkpoint_prefix=~/trained-inference-graphs/output_inference_graph_v1/model.ckpt \
     --output_directory=trainedTFLite \
     --add_postprocessing_op=true \
     --max_detections=10
@@ -221,13 +220,13 @@ python3 tensorflow/models/research/object_detection/export_tflite_ssd_graph.py \
 
 16. Check Saved Model 
 ```bash
-saved_model_cli show --dir trained-inference-graphs/output_inference_graph_v1/saved_model --all
+saved_model_cli show --dir ~/trained-inference-graphs/output_inference_graph_v1/saved_model --all
 ```
 17. Use Convert Tensorflow Model to Tensorflow Lite Model with TOCO
 ```bash
 #Convert TF Graphs to TFLite Model
-toco --output_file=LogoObjD.tflite \
-  --graph_def_file=trainedTFLite/tflite_graph.pb \
+toco --output_file=~/LogoObjD.tflite \
+  --graph_def_file=~/trainedTFLite/tflite_graph.pb \
   --input_format=TENSORFLOW_GRAPHDEF \
   --inference_input_type=QUANTIZED_UINT8 \
   --inference_type=QUANTIZED_UINT8 \
