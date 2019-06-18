@@ -33,14 +33,14 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 
 ## CDSW Run Instructions
 
-1.  In CSDW, download the project using the git url for [here](https://github.com/BrooksIan/LogoTL.git) 
+1.  In CSDW, download the project using the git url for [here.](https://github.com/BrooksIan/LogoTL.git) 
 
-2.  Open a new session, run the CDSW-build.sh script at the terminal prompt, which contains the following operating code 
+2.  Open a new session, run the CDSW-build.sh script at the terminal prompt, which contains the following operating code. 
 
 ## Getting Started Super Fast (If you feel lucky)
-1. Download the project using the git url for [here](https://github.com/BrooksIan/LogoTL.git) 
+1. Download the project using the git url for [here.](https://github.com/BrooksIan/LogoTL.git) 
 
-2. Run at terminal prompt
+2. Run at terminal prompt.
 ```bash
 ./scripts/setup.sh
 ./scripts/buildModel.sh
@@ -48,14 +48,14 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 
 ## Step By Step Command Line Instructions
 
-1. Download the project using the git url for [here](https://github.com/BrooksIan/LogoTL.git) 
+1. Download the project using the git url for [here.](https://github.com/BrooksIan/LogoTL.git) 
 
 2. [Install Tensorflow](https://www.tensorflow.org/install/pip "link")
 ```bash
 pip3 install tensorflow
 pip install tensorflow
 ```
-3.  Download Tensorflow Models Git Repo and Build Project
+3.  Download Tensorflow models using their Git Repo and build the project.
 ```bash
 #Clone Tensorflow Model Git Repo
 mkdir tensorflow
@@ -66,21 +66,21 @@ python setup.py build
 python setup.py install
 ```
 
-4. Convert XML Image Labels to CSV (Optional - CSV files have been provided in Annotations Dir)
+4. Convert XML image labels to CSV. (Optional - CSV files have been provided in annotations Dir)
 ```bash
 #Convert XML Labels to CSV
 python ~/scipts/xml_to_csv.py -i Images/train -o ~/annotations/train_labels.csv
 python ~/sciptsxml_to_csv.py -i Images/test -o ~/annotations/test_labels.csv
 ```
 
-5. Convert CSV Labels to Tensorflow Record 
+5. Convert CSV labels to Tensorflow TF-Record type. 
 ```bash
 #Convert CSV to TF-Record
 python3 ~/scipts/generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=~/annotations/train_labels.csv --img_path=Images/train  --output_path=annotations/train.record
 python3 ~/scipts/generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=~/annotations/test_labels.csv --img_path=Images/test  --output_path=~/annotations/test.record
 ```
 
-6. Download Original Tensorflow Model
+6. Download original SSD Tensorflow model.
 ```bash
 #Download Original SSD Tensorflow Model
 cd
@@ -90,7 +90,7 @@ wget http://download.tensorflow.org/models/object_detection/ssd_inception_v2_coc
 tar -xzf ssd_inception_v2_coco_2018_01_28.tar.gz
 ```
 
-7. Install COCO API
+7. Install COCO API.
 ```bash
 #COCO API Install
 git clone https://github.com/cocodataset/cocoapi.git
@@ -99,7 +99,7 @@ make
 cp -r pycocotools ~/tensorflow/models/research/
 ```
 
-8. Download Google's Protobuffer Tools
+8. Download Google's protobuffer tools.
 ```bash
 # From tensorflow/models/research/
 cd ~/tensorflow/models/research/
@@ -107,21 +107,21 @@ wget -O protobuf.zip https://github.com/google/protobuf/releases/download/v3.0.0
 unzip protobuf.zip
 ```
 
-9. Create Protobuffers for Object Dectection Model
+9. Create protobuffers for Object Dectection model.
 ```bash
 # From tensorflow/models/research/
 cd ~/tensorflow/models/research/
 ./bin/protoc object_detection/protos/*.proto --python_out=.
 ```
 
-10.  Export Path to the Protobuffer Output Library
+10.  Export Path to the protobuffer library.
 ```bash
 # From tensorflow/models/research/
 cd ~/tensorflow/models/research/
 export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 ```
 
-11. Retrain Object Detection Model to Create New Model
+11. Retrain Object Detection model to create new Object Detection model.
 
 ```bash
 # From Home Directory
@@ -167,12 +167,7 @@ INFO:tensorflow:global step 4: loss = 15.9959 (2.743 sec/step)
 INFO:tensorflow:global step 4: loss = 15.9959 (2.743 sec/step)
 INFO:tensorflow:global step 5: loss = 15.4355 (2.243 sec/step)
 ```
-12.  Copy Export Inference Script To Home Dir
-```bash
-cd
-cp ~/tensorflow/models/research/object_detection/export_inference_graph.py .
-```
-13. Find the Highest Ranked Checkpoint File. Make a note of the file’s name, as it will be passed as an argument when we call the export_inference_graph.py script.
+12. Find the Highest Ranked Checkpoint File. Make a note of the file’s name, as it will be passed as an argument when we call the export_inference_graph.py script.
 ```bash
 ls -t ~/training/model.ckpt*
 ```
@@ -196,7 +191,7 @@ $ ls -t ~/training/model.ckpt*
 /home/cdsw/training/model.ckpt-2954.data-00000-of-00001
 ```
 
-14. Export Inference Graph Into Home Directory
+14. Export inference graph into Home directory.
 ```bash
 cd
 python3 ~/scripts/export_inference_graph.py --input_type image_tensor \
@@ -210,7 +205,7 @@ If this command is successful, then the trained inference graph will be created.
 ls ~/trained-inference-graphs/output_inference_graph_v1.pb
 ```
 
-15.  Convert Tensorflow Model to Tensorflow Lite Model
+15.  Convert Tensorflow model to Tensorflow Lite model.
 ```bash
 python3 ~/tensorflow/models/research/object_detection/export_tflite_ssd_graph.py \
     --input_type=image_tensor \
@@ -222,11 +217,11 @@ python3 ~/tensorflow/models/research/object_detection/export_tflite_ssd_graph.py
     --max_detections=10
 ```
 
-16. Check Saved Model 
+16. Evaulated the Saved Model using CLI tools.  
 ```bash
 saved_model_cli show --dir ~/trained-inference-graphs/output_inference_graph_v1/saved_model --all
 ```
-17. Use Convert Tensorflow Model to Tensorflow Lite Model with TOCO
+17. Convert Tensorflow model to Tensorflow Lite model with TOCO.
 ```bash
 #Convert TF Graphs to TFLite Model
 toco --output_file=~/LogoObjD.tflite \
@@ -246,6 +241,6 @@ toco --output_file=~/LogoObjD.tflite \
   --allow_custom_ops 
 ```
 
-18.  Use [Online Edge TPU Compiler](https://coral.withgoogle.com/web-compiler) to prepare LogoObjD.tflite model for TPU 
+18.  Use [Online Edge TPU Compiler](https://coral.withgoogle.com/web-compiler) to prepare LogoObjD.tflite model for TPU. 
 
 
