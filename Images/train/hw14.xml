@@ -1,7 +1,7 @@
 <annotation>
-	<folder>images</folder>
+	<folder>train</folder>
 	<filename>hw14.jpeg</filename>
-	<path>/Users/ibrooks/Images/TransferlearningImages/images/hw14.jpeg</path>
+	<path>/Users/ibrooks/Documents/GitHub/LogoTL/Images/train/hw14.jpeg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -17,7 +17,7 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>54</xmin>
+			<xmin>57</xmin>
 			<ymin>72</ymin>
 			<xmax>168</xmax>
 			<ymax>115</ymax>

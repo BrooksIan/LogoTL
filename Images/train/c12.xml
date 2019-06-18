@@ -1,13 +1,13 @@
 <annotation>
-	<folder>images</folder>
+	<folder>train</folder>
 	<filename>c12.jpg</filename>
-	<path>/Users/ibrooks/Images/TransferlearningImages/images/c12.jpg</path>
+	<path>/Users/ibrooks/Documents/GitHub/LogoTL/Images/train/c12.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
 	<size>
-		<width>1200</width>
-		<height>900</height>
+		<width>640</width>
+		<height>480</height>
 		<depth>3</depth>
 	</size>
 	<segmented>0</segmented>
@@ -17,34 +17,46 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>403</xmin>
-			<ymin>197</ymin>
-			<xmax>655</xmax>
-			<ymax>257</ymax>
+			<xmin>220</xmin>
+			<ymin>105</ymin>
+			<xmax>348</xmax>
+			<ymax>145</ymax>
 		</bndbox>
 	</object>
 	<object>
 		<name>Cloudera</name>
 		<pose>Unspecified</pose>
-		<truncated>0</truncated>
+		<truncated>1</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>784</xmin>
+			<xmin>640</xmin>
 			<ymin>43</ymin>
-			<xmax>1147</xmax>
+			<xmax>640</xmax>
 			<ymax>189</ymax>
 		</bndbox>
 	</object>
 	<object>
 		<name>Cloudera</name>
 		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>640</xmin>
+			<ymin>247</ymin>
+			<xmax>640</xmax>
+			<ymax>308</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Cloudera</name>
+		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>724</xmin>
-			<ymin>247</ymin>
-			<xmax>921</xmax>
-			<ymax>308</ymax>
+			<xmin>437</xmin>
+			<ymin>14</ymin>
+			<xmax>605</xmax>
+			<ymax>110</ymax>
 		</bndbox>
 	</object>
 </annotation>

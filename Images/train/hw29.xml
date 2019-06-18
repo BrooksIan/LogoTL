@@ -1,26 +1,26 @@
 <annotation>
-	<folder>images</folder>
+	<folder>train</folder>
 	<filename>hw29.jpg</filename>
-	<path>/Users/ibrooks/Images/TransferlearningImages/images/hw29.jpg</path>
+	<path>/Users/ibrooks/Documents/GitHub/LogoTL/Images/train/hw29.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
 	<size>
-		<width>373</width>
-		<height>135</height>
+		<width>640</width>
+		<height>232</height>
 		<depth>3</depth>
 	</size>
 	<segmented>0</segmented>
 	<object>
 		<name>Hortonworks</name>
 		<pose>Unspecified</pose>
-		<truncated>1</truncated>
+		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>23</xmin>
-			<ymin>4</ymin>
-			<xmax>348</xmax>
-			<ymax>135</ymax>
+			<xmin>51</xmin>
+			<ymin>14</ymin>
+			<xmax>587</xmax>
+			<ymax>223</ymax>
 		</bndbox>
 	</object>
 </annotation>

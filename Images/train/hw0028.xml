@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>hw0028.jpg</filename>
+	<path>/Users/ibrooks/Documents/GitHub/LogoTL/Images/train/hw0028.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Hortonworks</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>160</xmin>
+			<ymin>176</ymin>
+			<xmax>205</xmax>
+			<ymax>272</ymax>
+		</bndbox>
+	</object>
+</annotation>

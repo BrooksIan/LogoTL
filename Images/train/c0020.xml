@@ -1,0 +1,26 @@
+<annotation>
+	<folder>train</folder>
+	<filename>c0020.jpg</filename>
+	<path>/Users/ibrooks/Documents/GitHub/LogoTL/Images/train/c0020.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>649</width>
+		<height>487</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Cloudera</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>50</xmin>
+			<ymin>281</ymin>
+			<xmax>253</xmax>
+			<ymax>335</ymax>
+		</bndbox>
+	</object>
+</annotation>

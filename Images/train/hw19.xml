@@ -1,13 +1,13 @@
 <annotation>
-	<folder>images</folder>
+	<folder>train</folder>
 	<filename>hw19.jpg</filename>
-	<path>/Users/ibrooks/Images/TransferlearningImages/images/hw19.jpg</path>
+	<path>/Users/ibrooks/Documents/GitHub/LogoTL/Images/train/hw19.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
 	<size>
-		<width>225</width>
-		<height>225</height>
+		<width>640</width>
+		<height>640</height>
 		<depth>3</depth>
 	</size>
 	<segmented>0</segmented>
@@ -18,9 +18,9 @@
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>1</xmin>
-			<ymin>55</ymin>
-			<xmax>225</xmax>
-			<ymax>145</ymax>
+			<ymin>168</ymin>
+			<xmax>640</xmax>
+			<ymax>406</ymax>
 		</bndbox>
 	</object>
 </annotation>
