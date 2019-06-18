@@ -238,6 +238,6 @@ toco --output_file=LogoObjD.tflite \
   --allow_custom_ops 
 ```
 
-18.  Use [Online Edge TPU Compiler](https://coral.withgoogle.com/web-compiler) to prepare .TFLite model for TPU 
+18.  Use [Online Edge TPU Compiler](https://coral.withgoogle.com/web-compiler) to prepare LogoObjD.tflite model for TPU 
 
 
