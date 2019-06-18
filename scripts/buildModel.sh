@@ -3,20 +3,20 @@
 ##Convert XML Labels to CSV
 # From Home Directory
 cd
-python xml_to_csv.py -i ~/Images/train -o ~/annotations/train_labels.csv
-python xml_to_csv.py -i ~/Images/test -o ~/annotations/test_labels.csv
+python ~/scripts/xml_to_csv.py -i ~/Images/train -o ~/annotations/train_labels.csv
+python ~/scripts/xml_to_csv.py -i ~/Images/test -o ~/annotations/test_labels.csv
 
 ##Convert CSV to TF-Record
 # From Home Directory
 cd
-python3 generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=~/annotations/train_labels.csv --img_path=~/Images/train  --output_path=~/annotations/train.record
-python3 generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=~/annotations/test_labels.csv --img_path=~/Images/test  --output_path=~/annotations/test.record
+python3 ~/scripts/generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=~/annotations/train_labels.csv --img_path=~/Images/train  --output_path=~/annotations/train.record
+python3 ~/scripts/generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=~/annotations/test_labels.csv --img_path=~/Images/test  --output_path=~/annotations/test.record
 
 #Train Tensorflow Model
 
 #From Home Directory
 cd
-python3 train.py --logtostderr --train_dir=~/training/ \
+python3 ~/scripts/train.py --logtostderr --train_dir=~/training/ \
 --pipeline_config_path=~/training/ssd_inception_v2_coco.config
 
 #Find the Highest Ranked Checkpoint File
@@ -25,7 +25,7 @@ ls -t ~/training/model.ckpt* | head -1
 
 #Export Inference Graph For TFLite
 cd
-python3 export_inference_graph.py --input_type image_tensor \
+python3 ~/scripts/export_inference_graph.py --input_type image_tensor \
 --pipeline_config_path ~/training/ssd_inception_v2_coco.config \
 --trained_checkpoint_prefix ~/training/model.ckpt-4041 \
 --output_directory ~/trained-inference-graphs/output_inference_graph_v1.pb
