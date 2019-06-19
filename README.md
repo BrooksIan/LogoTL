@@ -167,6 +167,12 @@ INFO:tensorflow:global step 4: loss = 15.9959 (2.743 sec/step)
 INFO:tensorflow:global step 4: loss = 15.9959 (2.743 sec/step)
 INFO:tensorflow:global step 5: loss = 15.4355 (2.243 sec/step)
 ```
+
+You can also check the Tenorboard with this command
+```bash
+tensorboard --logdir=~/training --port=8080
+```
+
 12. Find the Highest Ranked Checkpoint File. Make a note of the file’s name, as it will be passed as an argument when we call the export_inference_graph.py script.
 ```bash
 ls -t ~/training/model.ckpt*
