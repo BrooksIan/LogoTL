@@ -49,7 +49,7 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 
 Using LabelImg, the create object label annotation XML files.  Please note, these files have been provided in this project, and they are avaiable in the Images/train/ or Images/test/ directories.  Below is a screenshot of the the application.
 
-![LabelImg](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/Screen Shot 2019-06-21 at 11.18.13 AM.png)
+![LabelImg](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/)
 
 ## Model Build Instructions 
 
