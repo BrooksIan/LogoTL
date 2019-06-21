@@ -35,9 +35,10 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
     1. [CDSW Run Instructions](#ModelBuildCDSW)
     2. [Quick Instructions](#ModelBuildLuck)
     3. [Step By Step Command Line Instructions](#ModelBuildStepBy)
-                1. [Download and Install Libraries](#ModelBuildStepBy1)
-                2. [Preprocessing Images](#ModelBuildStepBy2)
-                3. [Transfer Learning - Retrain Model With New Detection Objects](#ModelBuildStepBy3)
+    
+        1. [Download and Install Libraries](#ModelBuildStepBy1)
+        2. [Preprocessing Images](#ModelBuildStepBy2)
+        3. [Transfer Learning - Retrain Model With New Detection Objects](#ModelBuildStepBy3)
 
             
 6. [Convert Tensorflow Model to Tensorflow Lite Instructions](#ModelConvert)
