@@ -49,7 +49,17 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 
 Using LabelImg, the create object label annotation XML files.  Please note, these files have been provided in this project, and they are avaiable in the Images/train/ or Images/test/ directories.  Below is a screenshot of the the application.
 
-![LabelImg](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/)
+![LabelImg](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/labelObjects.png)
+
+## Data Augmentation 
+
+Using this [libray](), this project will take the orginally provided photos and create syntetic images for traing to boost model performance.  Below are a few different examples, please note the object labels are updated for the image. 
+
+![AugImg1](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/imgAug1.png)
+![AugImg2](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/imgAug2.png)
+![AugImg3](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/imgAug3.png)
+![AugImg4](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/imgAug4.png)
+
 
 ## Model Build Instructions 
 
