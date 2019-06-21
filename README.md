@@ -14,7 +14,7 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 **Requirements**: 
 - Python 3.6
 - Tensorflow 1.13
-- CDSW 1.5 (For Quick Install and Build)
+- CDSW 1.5 (For quick build)
 
 **Author**: Ian R Brooks
 
@@ -30,7 +30,7 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 
 3. [Image Prep](#ImgPrep)
 4. [Data Augmentation](#DataAug)
-5. [Model Build Instructions](#ModelBuild)
+5. [Build Tensorflow Model Instructions](#ModelBuild)
     1. [CDSW Run Instructions](#ModelBuildCDSW)
     2. [Quick Instructions](#ModelBuildLuck)
     3. [Step By Step Command Line Instructions](#ModelBuildStepBy)
@@ -82,7 +82,7 @@ Below are a few different examples, please note the object labels are updated fo
 ![AugImg4](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/imgAug4.png)
 
 
-## Model Build Instructions <a name="ModelBuild"></a>
+## Build Tensorflow Object Detection Model Instructions <a name="ModelBuild"></a>
 
 **Please Note**: Any scripts that use '~/\' in the path are assuming this is the home directory of the downloaded project.  This is the default for CDSW. 
 
