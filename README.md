@@ -35,6 +35,11 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
     1. [CDSW Run Instructions](#ModelBuildCDSW)
     2. [Quick Instructions](#ModelBuildLuck)
     3. [Step By Step Command Line Instructions](#ModelBuildStepBy)
+            1. [Download and Install Libraries](#ModelBuildStepBy1)
+            2. [Preprocessing Images](#ModelBuildStepBy2)
+            3. [Transfer Learning - Retrain Model With New Detection Objects](#ModelBuildStepBy3)
+
+            
 6. [Convert Tensorflow Model to Tensorflow Lite Instructions](#ModelConvert)
 7. [Compile Tensorflow Lite Model for Edge TPU](#EdgeTPU)
 8. [Deploy Object Detection Model Coral Dev Board](#CoralDeploy)
@@ -113,7 +118,7 @@ Below are a few different examples, please note the object labels are updated fo
 
 ### Step By Step Command Line Instructions <a name="ModelBuildStepBy"></a>
 
-#### Download and Install Libraries 
+#### Download and Install Libraries <a name="ModelBuildStepBy1"></a>
 1. Download the project using the git url for [here.](https://github.com/BrooksIan/LogoTL.git) 
 
 2. [Install Tensorflow](https://www.tensorflow.org/install/pip "link")
@@ -131,7 +136,7 @@ cd /home/cdsw/tensorflow/models/research
 python setup.py build
 python setup.py install
 ```
-4. Download original SSD Tensorflow model.
+4. Download original SSD Tensorflow model. 
 ```bash
 #Download Original SSD Tensorflow Model
 cd
@@ -178,7 +183,7 @@ git clone https://github.com/Paperspace/DataAugmentationForObjectDetection.git
 ```
 
 
-#### Preprocessing Images 
+#### Preprocessing Images <a name="ModelBuildStepBy2"></a>
 1. Convert XML image labels to CSV. (Optional - CSV files have been provided in annotations Dir)
 ```bash
 #Convert XML Labels to CSV
@@ -198,7 +203,7 @@ python3 ~/scipts/generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --c
 python3 ~/scipts/generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=~/annotations/test_labels.csv --img_path=Images/test  --output_path=~/annotations/test.record
 ```
 
-#### Transfer Learning - Retrain Model With New Detection Objects
+#### Transfer Learning - Retrain Model With New Detection Objects <a name="ModelBuildStepBy3"></a>
 1. Retrain Object Detection model to create new Object Detection model.
 
 ```bash
