@@ -4,6 +4,10 @@
 
 ![objectdetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/both.jpg "objdect")
 
+## Corporate Logo Object Detection
+
+This Github repo is designed to be optmized for Cloudera Data Science Workbench (CDSW), but it's not required. 
+
 **Language**: Python
 
 **Requirements**: 
@@ -40,19 +44,17 @@
 - [Convert Tensorflow Model for TPU](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tpu_exporters.md "link6")
 - [Convert Tensorflow Model to TFLite](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/convert/cmdline_reference.md "link8")
 
-## Corporate Logo Object Detection
-
-This Github repo is designed to be optmized for Cloudera Data Science Workbench (CDSW), but it's not required.  
+## Instructions 
 
 **Please Note**: Any scripts that use '~/\' in the path are assuming this is the home directory of the downloaded project.  This is the default for CDSW. 
 
-## CDSW Run Instructions
+### CDSW Run Instructions
 
 1.  In CSDW, download the project using the git url for [here.](https://github.com/BrooksIan/LogoTL.git) 
 
 2.  Open a new session, run the CDSW-build.sh script at the terminal prompt, which contains the following operating code. 
 
-## Getting Started Super Fast (If you feel lucky)
+### Quick Instructions (If you feel lucky)
 1. Download the project using the git url for [here.](https://github.com/BrooksIan/LogoTL.git) 
 
 2. Run at terminal prompt.
@@ -61,7 +63,7 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 ./scripts/buildModel.sh
 ```
 
-## Step By Step Command Line Instructions
+### Step By Step Command Line Instructions
 
 1. Download the project using the git url for [here.](https://github.com/BrooksIan/LogoTL.git) 
 
