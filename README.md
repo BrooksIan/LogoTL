@@ -171,6 +171,13 @@ cd ~/tensorflow/models/research/
 export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 ```
 
+9. Download Data Augmentation For Object Detection
+```bash
+cd
+git clone https://github.com/Paperspace/DataAugmentationForObjectDetection.git
+```
+
+
 #### Preprocessing Images 
 1. Convert XML image labels to CSV. (Optional - CSV files have been provided in annotations Dir)
 ```bash
