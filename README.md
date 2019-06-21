@@ -33,6 +33,7 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
     2. [Quick Instructions](#ModelBuildLuck)
     3. [Step By Step Command Line Instructions](#ModelBuildStepBy)
 6. [Convert Tensorflow Model to Tensorflow Lite Instructions](#ModelConvert)
+7. [Complile Tensorflow Lite Model for Edge TPU](#EdgeTPU)
 
 
 ## Introduction <a name="introduction"></a>
@@ -276,8 +277,7 @@ toco --output_file=~/LogoObjD.tflite \
   --allow_custom_ops 
 ```
 
-4.  Use [Online Edge TPU Compiler](https://coral.withgoogle.com/web-compiler) to prepare LogoObjD.tflite model for TPU.  If the compiler finishes, then you should see the screen below.  Please note, this project includes the resulting model. 
+## Complile Tensorflow Lite Model for Edge TPU <a name="EdgeTPU"></a>
+ Use [Online Edge TPU Compiler](https://coral.withgoogle.com/web-compiler) to prepare LogoObjD.tflite model for TPU.  If the compiler finishes, then you should see the screen below.  Please note, this project includes the resulting model. 
 
 ![OnlineCompile](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/OnlineCompiler.png)
-
-
