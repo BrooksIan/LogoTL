@@ -32,6 +32,7 @@
 - [Free Object Labeling Tool](https://github.com/tzutalin/labelImg "link3")
 - [Data Augmentation for Object Detection GitHub](https://github.com/Paperspace/DataAugmentationForObjectDetection)
 - [ImageMagick; Free Image Processing Tool](https://imagemagick.org/)
+- [SSD: Single Shot MultiBox Detector](https://arxiv.org/pdf/1512.02325.pdf)
 
 **Converting Tensorflow Models to Tensorflow Lite Models**:
 - [Exporting Tained Model for Inference](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models.md "link7")
