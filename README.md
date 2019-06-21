@@ -4,9 +4,8 @@
 
 ![objectdetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/both.jpg "objdect")
 
-## Corporate Logo Object Detection
-
-This Github repo is designed to be optmized for Cloudera Data Science Workbench (CDSW), but it's not required. 
+## Introduction - Corporate Logo Object Detection <a name="introduction"></a>
+This Github repo is designed to be optmized for Cloudera Data Science Workbench (CDSW), but it's not required.
 
 **Language**: Python
 
@@ -35,9 +34,6 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 6. [Convert Tensorflow Model to Tensorflow Lite Instructions](#ModelConvert)
 7. [Complile Tensorflow Lite Model for Edge TPU](#EdgeTPU)
 
-
-## Introduction <a name="introduction"></a>
-Some introduction text, formatted in heading 2 style
 
 ## Links <a name="links"></a>
 **Object Detection**: <a name="linksObjDect"></a>
