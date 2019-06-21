@@ -285,6 +285,6 @@ toco --output_file=~/trainedModels/LogoObjD.tflite \
 ```
 
 ## Complile Tensorflow Lite Model for Edge TPU <a name="EdgeTPU"></a>
- Use [Online Edge TPU Compiler](https://coral.withgoogle.com/web-compiler) to prepare LogoObjD.tflite model for TPU.  If the compiler finishes, then you should see the screen below.  Please note, this project includes the resulting model. 
+ Use [Online Edge TPU Compiler](https://coral.withgoogle.com/web-compiler) to prepare LogoObjD.tflite model for TPU.  If the compiler finishes, then you should see the screen below.  Please note, this project includes the resulting models, which are located in the trainedModel directory. 
 
 ![OnlineCompile](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/OnlineCompiler.png)
