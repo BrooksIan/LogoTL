@@ -303,7 +303,7 @@ wget https://github.com/BrooksIan/LogoTL/raw/master/LogoObjD_<***ID Number Here*
 edgetpu_detect_server --model LogoObjD_<***ID Number Here***>_edgetpu.tflite --label label.txt --threshold=0.51
 ```
 
-3. Open Webbroswer using to address http://<Coral Dev Board Host Address>:<Default Port>   
+3. Open Webbroswer using to address http:// (Coral Dev Board Host Address):(Default Port)
     
     This is an example: http://192.168.1.245:4664/
 
