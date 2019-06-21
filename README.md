@@ -14,19 +14,20 @@
 
 **Follow**: [LinkedIn - Ian Brooks PhD](https://www.linkedin.com/in/ianrbrooksphd/)
 
-**Object Detection Links**:
+## Links
+**Object Detection**:
 - [Object Detection Tutorial Link](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html "link1")
 - [Another Object Detection Tutorial]( https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9 "link4")
 - [Yet Another Object Detection Tutorial](https://3sidedcube.com/guide-retraining-object-detection-models-tensorflow/ "link5")
 - [Logo Object Detection Article](https://towardsdatascience.com/google-object-detection-api-to-detect-brand-logos-fd9e113725d8)
 - [Logo Object Detection Article Using SSD](https://towardsdatascience.com/logo-detection-in-images-using-ssd-bcd3732e1776)
 
-**Image Augmentation For Object Detection Links**:
+**Image Augmentation For Object Detection**:
 - [Great Read on Data Augmentation for Object Detection](https://blog.paperspace.com/data-augmentation-for-bounding-boxes/)
 - [Image Augmentation Examples in Python](https://towardsdatascience.com/image-augmentation-examples-in-python-d552c26f2873)
 - [Image Augmentation Using Keras](https://machinelearningmastery.com/image-augmentation-deep-learning-keras/)
 
-**Tool Links**:
+**Tools**:
 - [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection "link2")
 - [Online Edge TPU Compiler](https://coral.withgoogle.com/web-compiler "link9")
 - [Free Object Labeling Tool](https://github.com/tzutalin/labelImg "link3")
