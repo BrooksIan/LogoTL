@@ -18,20 +18,37 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 
 **Follow**: [LinkedIn - Ian Brooks PhD](https://www.linkedin.com/in/ianrbrooksphd/)
 
-## Links
-**Object Detection**:
+# Table of contents
+1. [Introduction](#introduction)
+2. [Links](#links)
+    1. [Object Detection](#linksObjDect)
+    2. [Image Augmentation For Object Detection](#linksImgAug)
+3. [Image Prep](#ImgPrep)
+
+## This is the introduction <a name="introduction"></a>
+Some introduction text, formatted in heading 2 style
+
+### Sub paragraph <a name="subparagraph1"></a>
+This is a sub paragraph, formatted in heading 3 style
+
+## Another paragraph <a name="paragraph2"></a>
+The second paragraph text
+
+
+## Links <a name="links"></a>
+**Object Detection**: <a name="linksObjDect"></a>
 - [Object Detection Tutorial Link](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html "link1")
 - [Another Object Detection Tutorial]( https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9 "link4")
 - [Yet Another Object Detection Tutorial](https://3sidedcube.com/guide-retraining-object-detection-models-tensorflow/ "link5")
 - [Logo Object Detection Article](https://towardsdatascience.com/google-object-detection-api-to-detect-brand-logos-fd9e113725d8)
 - [Logo Object Detection Article Using SSD](https://towardsdatascience.com/logo-detection-in-images-using-ssd-bcd3732e1776)
 
-**Image Augmentation For Object Detection**:
+**Image Augmentation For Object Detection**: <a name="linksImgAug"></a>
 - [Great Read on Data Augmentation for Object Detection](https://blog.paperspace.com/data-augmentation-for-bounding-boxes/)
 - [Image Augmentation Examples in Python](https://towardsdatascience.com/image-augmentation-examples-in-python-d552c26f2873)
 - [Image Augmentation Using Keras](https://machinelearningmastery.com/image-augmentation-deep-learning-keras/)
 
-**Tools**:
+**Tools**: <a name="linksTools"></a>
 - [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection "link2")
 - [Online Edge TPU Compiler](https://coral.withgoogle.com/web-compiler "link9")
 - [LabelImg - Free Object Labeling Tool](https://github.com/tzutalin/labelImg "link3")
@@ -39,13 +56,13 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 - [ImageMagick - Free Image Processing Tool](https://imagemagick.org/)
 - [SSD: Single Shot MultiBox Detector](https://arxiv.org/pdf/1512.02325.pdf)
 
-**Converting Tensorflow Models to Tensorflow Lite Models**:
+**Converting Tensorflow Models to Tensorflow Lite Models**: <a name="linksConvert"></a>
 - [Exporting Tained Model for Inference](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models.md "link7")
 - [Convert Tensorflow Model for TPU](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tpu_exporters.md "link6")
 - [Convert Tensorflow Model to TFLite](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/convert/cmdline_reference.md "link8")
 
 
-## Image Data Prep (Optional)
+## Image Data Prep (Optional)<a name="ImgPrep"></a>
 
 Using LabelImg, the create object label annotation XML files.  Please note, these files have been provided in this project, and they are avaiable in the Images/train/ or Images/test/ directories.  Below is a screenshot of the the application.
 
