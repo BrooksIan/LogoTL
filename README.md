@@ -51,6 +51,11 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 - [Image Augmentation Examples in Python](https://towardsdatascience.com/image-augmentation-examples-in-python-d552c26f2873)
 - [Image Augmentation Using Keras](https://machinelearningmastery.com/image-augmentation-deep-learning-keras/)
 
+**Converting Tensorflow Models to Tensorflow Lite Models**: <a name="linksConvert"></a>
+- [Exporting Tained Model for Inference](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models.md "link7")
+- [Convert Tensorflow Model for TPU](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tpu_exporters.md "link6")
+- [Convert Tensorflow Model to TFLite](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/convert/cmdline_reference.md "link8")
+
 **Tools**: <a name="linksTools"></a>
 - [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection "link2")
 - [Online Edge TPU Compiler](https://coral.withgoogle.com/web-compiler "link9")
@@ -58,12 +63,6 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 - [Data Augmentation for Object Detection GitHub](https://github.com/Paperspace/DataAugmentationForObjectDetection)
 - [ImageMagick - Free Image Processing Tool](https://imagemagick.org/)
 - [SSD: Single Shot MultiBox Detector](https://arxiv.org/pdf/1512.02325.pdf)
-
-**Converting Tensorflow Models to Tensorflow Lite Models**: <a name="linksConvert"></a>
-- [Exporting Tained Model for Inference](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models.md "link7")
-- [Convert Tensorflow Model for TPU](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tpu_exporters.md "link6")
-- [Convert Tensorflow Model to TFLite](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/convert/cmdline_reference.md "link8")
-
 
 ## Preprocessing - Image and Label Preparation (Optional)<a name="ImgPrep"></a>
 
