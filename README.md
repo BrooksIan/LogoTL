@@ -25,8 +25,9 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 2. [Links](#links)
     1. [Object Detection](#linksObjDect)
     2. [Image Augmentation For Object Detection](#linksImgAug)
-    3. [Tools](#linksTools)
-    4. [Converting Tensorflow Models to Tensorflow Lite Models](#linksConvert)
+    3. [Converting Tensorflow Models to Tensorflow Lite Models](#linksConvert)
+    4. [Google Coral](#linksCoral)
+    5. [Tools](#linksTools)
 
 3. [Image Prep](#ImgPrep)
 4. [Data Augmentation](#DataAug)
@@ -55,6 +56,12 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 - [Exporting Tained Model for Inference](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models.md "link7")
 - [Convert Tensorflow Model for TPU](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tpu_exporters.md "link6")
 - [Convert Tensorflow Model to TFLite](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/convert/cmdline_reference.md "link8")
+
+**Google Coral Dev Board**: <a name="linksCoral"></a>
+- [Coral Board Getting Started](https://coral.withgoogle.com/docs/dev-board/get-started/)
+- [Retrain Object Detection Model Tutorial](https://coral.withgoogle.com/docs/edgetpu/retrain-detection/)
+- [Coral Dev Board - Hands On](https://medium.com/@aallan/hands-on-with-the-coral-dev-board-adbcc317b6af)
+
 
 **Tools**: <a name="linksTools"></a>
 - [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection "link2")
