@@ -34,9 +34,9 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 **Tools**:
 - [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection "link2")
 - [Online Edge TPU Compiler](https://coral.withgoogle.com/web-compiler "link9")
-- [Free Object Labeling Tool](https://github.com/tzutalin/labelImg "link3")
+- [LabelImg - Free Object Labeling Tool](https://github.com/tzutalin/labelImg "link3")
 - [Data Augmentation for Object Detection GitHub](https://github.com/Paperspace/DataAugmentationForObjectDetection)
-- [ImageMagick; Free Image Processing Tool](https://imagemagick.org/)
+- [ImageMagick - Free Image Processing Tool](https://imagemagick.org/)
 - [SSD: Single Shot MultiBox Detector](https://arxiv.org/pdf/1512.02325.pdf)
 
 **Converting Tensorflow Models to Tensorflow Lite Models**:
@@ -44,7 +44,14 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 - [Convert Tensorflow Model for TPU](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tpu_exporters.md "link6")
 - [Convert Tensorflow Model to TFLite](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/convert/cmdline_reference.md "link8")
 
-## Instructions 
+
+## Image Data Prep (Optional)
+
+Using LabelImg, the create object label annotation XML files.  Please note, these files have been provided in this project, and they are avaiable in the Images/train/ or Images/test/ directories.  Below is a screenshot of the the application.
+
+![LabelImg](Images/project/Screen Shot 2019-06-21 at 11.18.13 AM.png)
+
+## Model Instructions 
 
 **Please Note**: Any scripts that use '~/\' in the path are assuming this is the home directory of the downloaded project.  This is the default for CDSW. 
 
