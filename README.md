@@ -295,7 +295,7 @@ toco --output_file=~/trainedModels/LogoObjD.tflite \
 
 ```bash
 #On the Coral Dev Board - Copy Model
-wget https://github.com/BrooksIan/LogoTL/raw/master/LogoObjD_<***ID Number Here***>_edgetpu.tflite
+wget https://github.com/BrooksIan/LogoTL/raw/master/trainedModels/LogoObjD_<***ID Number Here***>_edgetpu.tflite
 ```
 
 2. Deploy the model to Edge TPU
