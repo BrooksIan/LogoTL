@@ -240,7 +240,7 @@ $ ls -t ~/training/model.ckpt*
 cd
 python3 ~/scripts/export_inference_graph.py --input_type image_tensor \
 --pipeline_config_path ~/training/ssd_inception_v2_coco.config \
---trained_checkpoint_prefix ~/training/model.ckpt-4041 \
+--trained_checkpoint_prefix ~/training/model.ckpt-<***Check Point Number Here***> \
 --output_directory ~/trained-inference-graphs/output_inference_graph_v1.pb
 ```
 
@@ -295,12 +295,12 @@ toco --output_file=~/trainedModels/LogoObjD.tflite \
 
 ```bash
 #On the Coral Dev Board - Copy Model
-wget https://github.com/BrooksIan/LogoTL/raw/master/LogoObjD_<**ID Number Here***>_edgetpu.tflite
+wget https://github.com/BrooksIan/LogoTL/raw/master/LogoObjD_<***ID Number Here***>_edgetpu.tflite
 ```
 
 2. Deploy the model to Edge TPU
 ```bash
-edgetpu_detect_server --model LogoObjD_<**ID Number Here***>_edgetpu.tflite --label label.txt --threshold=0.51
+edgetpu_detect_server --model LogoObjD_<***ID Number Here***>_edgetpu.tflite --label label.txt --threshold=0.51
 ```
 
 3. Open Webbroswer using to address http://<Coral Dev Board Host Address>:<Default Port>   
