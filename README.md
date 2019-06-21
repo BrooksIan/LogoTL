@@ -32,7 +32,7 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
     1. [CDSW Run Instructions](#ModelBuildCDSW)
     2. [Quick Instructions](#ModelBuildLuck)
     3. [Step By Step Command Line Instructions](#ModelBuildStepBy)
-6. [Convert Model Instructions](#ModelConvert)
+6. [Convert Tensorflow Model to Tensorflow Lite Instructions](#ModelConvert)
 
 
 ## Introduction <a name="introduction"></a>
@@ -251,7 +251,7 @@ $ ls -t ~/training/model.ckpt*
 /home/cdsw/training/model.ckpt-2954.data-00000-of-00001
 ```
 
-## Convert Model Instructions <a name="ModelConvert"></a>
+## Convert Tensorflow Model to Tensorflow Lite Instructions <a name="ModelConvert"></a>
 
 1. Export inference graph into Home directory.
 ```bash
