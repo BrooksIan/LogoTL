@@ -113,6 +113,7 @@ Below are a few different examples, please note the object labels are updated fo
 
 ### Step By Step Command Line Instructions <a name="ModelBuildStepBy"></a>
 
+#### Download and Install Libraries 
 1. Download the project using the git url for [here.](https://github.com/BrooksIan/LogoTL.git) 
 
 2. [Install Tensorflow](https://www.tensorflow.org/install/pip "link")
@@ -130,22 +131,7 @@ cd /home/cdsw/tensorflow/models/research
 python setup.py build
 python setup.py install
 ```
-
-4. Convert XML image labels to CSV. (Optional - CSV files have been provided in annotations Dir)
-```bash
-#Convert XML Labels to CSV
-python ~/scipts/xml_to_csv.py -i Images/train -o ~/annotations/train_labels.csv
-python ~/sciptsxml_to_csv.py -i Images/test -o ~/annotations/test_labels.csv
-```
-
-5. Convert CSV labels to Tensorflow TF-Record type. 
-```bash
-#Convert CSV to TF-Record
-python3 ~/scipts/generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=~/annotations/train_labels.csv --img_path=Images/train  --output_path=annotations/train.record
-python3 ~/scipts/generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=~/annotations/test_labels.csv --img_path=Images/test  --output_path=~/annotations/test.record
-```
-
-6. Download original SSD Tensorflow model.
+4. Download original SSD Tensorflow model.
 ```bash
 #Download Original SSD Tensorflow Model
 cd
@@ -154,8 +140,7 @@ cd pre-trained-model
 wget http://download.tensorflow.org/models/object_detection/ssd_inception_v2_coco_2018_01_28.tar.gz
 tar -xzf ssd_inception_v2_coco_2018_01_28.tar.gz
 ```
-
-7. Install COCO API.
+5. Install COCO API.
 ```bash
 #COCO API Install
 git clone https://github.com/cocodataset/cocoapi.git
@@ -164,7 +149,7 @@ make
 cp -r pycocotools ~/tensorflow/models/research/
 ```
 
-8. Download Google's protobuffer tools.
+6. Download Google's protobuffer tools.
 ```bash
 # From tensorflow/models/research/
 cd ~/tensorflow/models/research/
@@ -172,28 +157,48 @@ wget -O protobuf.zip https://github.com/google/protobuf/releases/download/v3.0.0
 unzip protobuf.zip
 ```
 
-9. Create protobuffers for Object Dectection model.
+7. Create protobuffers for Object Dectection model.
 ```bash
 # From tensorflow/models/research/
 cd ~/tensorflow/models/research/
 ./bin/protoc object_detection/protos/*.proto --python_out=.
 ```
 
-10.  Export Path to the protobuffer library.
+8.  Export Path to the protobuffer library.
 ```bash
 # From tensorflow/models/research/
 cd ~/tensorflow/models/research/
 export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 ```
 
-11. Retrain Object Detection model to create new Object Detection model.
+#### Preprocessing Images 
+1. Convert XML image labels to CSV. (Optional - CSV files have been provided in annotations Dir)
+```bash
+#Convert XML Labels to CSV
+python ~/scipts/xml_to_csv.py -i Images/train -o ~/annotations/train_labels.csv
+python ~/sciptsxml_to_csv.py -i Images/test -o ~/annotations/test_labels.csv
+```
+
+2. Data Augmentation - Create 1000s images for training for the original images and CSV file from the previous step. 
+```bash
+Under construction
+```
+
+3. Convert CSV labels to Tensorflow TF-Record type. 
+```bash
+#Convert CSV to TF-Record
+python3 ~/scipts/generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=~/annotations/train_labels.csv --img_path=Images/train  --output_path=annotations/train.record
+python3 ~/scipts/generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=~/annotations/test_labels.csv --img_path=Images/test  --output_path=~/annotations/test.record
+```
+
+#### Transfer Learning - Retrain Model With New Detection Objects
+1. Retrain Object Detection model to create new Object Detection model.
 
 ```bash
 # From Home Directory
 cd
 
 #Update PATH and PYTHONPATH
-cd
 export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research/
 export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research/slim
 export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research/object_detection
@@ -211,7 +216,7 @@ You can also check the Tenorboard with this command
 tensorboard --logdir=~/training --port=8080
 ```
 
-12. Find the Highest Ranked Checkpoint File. Make a note of the file’s name, as it will be passed as an argument when we call the export_inference_graph.py script.
+2. Find the Highest Ranked Checkpoint File. Make a note of the file’s name, as it will be passed as an argument when we call the export_inference_graph.py script.
 ```bash
 ls -t ~/training/model.ckpt*
 ```
@@ -233,6 +238,21 @@ $ ls -t ~/training/model.ckpt*
 /home/cdsw/training/model.ckpt-2954.meta
 /home/cdsw/training/model.ckpt-2954.index
 /home/cdsw/training/model.ckpt-2954.data-00000-of-00001
+```
+
+3. If training session timed out, issuing the training command will pick up training from last saved check point.
+```bash
+# From Home Directory
+cd
+
+#Update PATH and PYTHONPATH
+export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research/
+export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research/slim
+export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research/object_detection
+export PATH=$PATH:~/.local/bin 
+
+python3 ~/scripts/train.py --logtostderr --train_dir=~/training/ \
+--pipeline_config_path=~/training/ssd_inception_v2_coco.config
 ```
 
 ## Convert Tensorflow Model to Tensorflow Lite Instructions <a name="ModelConvert"></a>
