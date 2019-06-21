@@ -20,7 +20,7 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 
 **Follow**: [LinkedIn - Ian Brooks PhD](https://www.linkedin.com/in/ianrbrooksphd/)
 
-# Table of contents
+# Table of Contents
 1. [Introduction](#introduction)
 2. [Links](#links)
     1. [Object Detection](#linksObjDect)
