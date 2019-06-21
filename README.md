@@ -267,7 +267,7 @@ saved_model_cli show --dir ~/trained-inference-graphs/output_inference_graph_v1/
 4. Convert Tensorflow model to Tensorflow Lite model with TOCO.
 ```bash
 #Convert TF Graphs to TFLite Model
-toco --output_file=~/LogoObjD.tflite \
+toco --output_file=~/trainedModels/LogoObjD.tflite \
   --graph_def_file=~/trainedTFLite/tflite_graph.pb \
   --input_format=TENSORFLOW_GRAPHDEF \
   --inference_input_type=QUANTIZED_UINT8 \
