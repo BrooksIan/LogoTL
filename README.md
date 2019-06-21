@@ -73,7 +73,7 @@ Using LabelImg, the create object label annotation XML files.  Please note, thes
 
 ## Data Augmentation <a name="DataAug"></a>
 
-Using this [libray](), this project will take the orginally provided photos and create syntetic images for traing to boost model performance.  Below are a few different examples, please note the object labels are updated for the image. 
+Using this [libray](https://github.com/Paperspace/DataAugmentationForObjectDetection), this project will take the orginally provided photos and create syntetic images for traing to boost model performance.  Below are a few different examples, please note the object labels are updated for the image. 
 
 ![AugImg1](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/imgAug1.png)
 ![AugImg2](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/imgAug2.png)
