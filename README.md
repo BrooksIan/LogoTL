@@ -291,7 +291,7 @@ toco --output_file=~/trainedModels/LogoObjD.tflite \
 ![OnlineCompile](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/OnlineCompiler.png)
 
 ## Deploy Object Detection Model Coral Dev Board <a name="CoralDeploy"></a>
-1. Copy the the edgetpu.tflite file to the Coral Dev board or the model from this project can be downloaded using the following command. (Assuming MDT has been setup on the Coral Dev Board. 
+1. Copy the the edgetpu.tflite file to the Coral Dev board or the model from this project can be downloaded using the following command. This is assuming MDT has been setup: [Coral Board Getting Started.](https://coral.withgoogle.com/docs/dev-board/get-started/)  
 
 ```bash
 #On the Coral Dev Board - Copy Model
