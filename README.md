@@ -26,7 +26,7 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
     1. [Object Detection](#linksObjDect)
     2. [Image Augmentation For Object Detection](#linksImgAug)
     3. [Converting Tensorflow Models to Tensorflow Lite Models](#linksConvert)
-    4. [Google Coral](#linksCoral)
+    4. [Google Coral Dev Board](#linksCoral)
     5. [Tools](#linksTools)
 
 3. [Image Preprocessing - Image and Label Preparation (Optional)](#ImgPrep)
