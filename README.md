@@ -37,6 +37,7 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
     3. [Step By Step Command Line Instructions](#ModelBuildStepBy)
 6. [Convert Tensorflow Model to Tensorflow Lite Instructions](#ModelConvert)
 7. [Complile Tensorflow Lite Model for Edge TPU](#EdgeTPU)
+8. [Deploy Object Detection Model Coral Dev Board](#CoralDeploy)
 
 
 ## Links <a name="links"></a>
@@ -285,6 +286,26 @@ toco --output_file=~/trainedModels/LogoObjD.tflite \
 ```
 
 ## Complile Tensorflow Lite Model for Edge TPU <a name="EdgeTPU"></a>
- Use [Online Edge TPU Compiler](https://coral.withgoogle.com/web-compiler) to prepare LogoObjD.tflite model for TPU.  If the compiler finishes, then you should see the screen below.  Please note, this project includes the resulting models, which are located in the trainedModel directory. 
+ Use [Online Edge TPU Compiler](https://coral.withgoogle.com/web-compiler) to prepare LogoObjD.tflite model for TPU.  If the compiler finishes, then you should see the screen below.  Please note, this project includes the resulting edgetpu.tflite model, which are located in the trainedModel directory. 
 
 ![OnlineCompile](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/OnlineCompiler.png)
+
+## Deploy Object Detection Model Coral Dev Board <a name="CoralDeploy"></a>
+1. Copy the the edgetpu.tflite file to the Coral Dev board or the model from this project can be downloaded using the following command. (Assuming MDT has been setup on the Coral Dev Board. 
+
+```bash
+#On the Coral Dev Board - Copy Model
+wget https://github.com/BrooksIan/LogoTL/raw/master/LogoObjD_<**ID Number Here***>_edgetpu.tflite
+```
+
+2. Deploy the model to Edge TPU
+```bash
+edgetpu_detect_server --model LogoObjD_<**ID Number Here***>_edgetpu.tflite --label label.txt --threshold=0.51
+```
+
+3. Open Webbroswer using to address http://<Coral Dev Board Host Address>:<Default Port>   
+    
+    This is an example: http://192.168.1.245:4664/
+
+
+
