@@ -5,6 +5,8 @@
 ![objectdetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/both.jpg "objdect")
 
 ## Introduction - Corporate Logo Object Detection <a name="introduction"></a>
+The goal of this project is to build a Tensorflow Lite Object Detection model designed to detect the Cloudera and Hortonworks logo.  This project will include the scripts, photos, and instructions to build the models from scatch, and this project will also include the resulting models for quick testing.
+
 This Github repo is designed to be optmized for Cloudera Data Science Workbench (CDSW), but it's not required.
 
 **Language**: Python
@@ -12,6 +14,7 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 **Requirements**: 
 - Python 3.6
 - Tensorflow 1.13
+- CDSW 1.5 (For Quick Install and Build)
 
 **Author**: Ian R Brooks
 
@@ -62,15 +65,17 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 - [Convert Tensorflow Model to TFLite](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/convert/cmdline_reference.md "link8")
 
 
-## Image Data Prep (Optional)<a name="ImgPrep"></a>
+## Preprocessing - Image and Label Preparation (Optional)<a name="ImgPrep"></a>
 
 Using LabelImg, the create object label annotation XML files.  Please note, these files have been provided in this project, and they are avaiable in the Images/train/ or Images/test/ directories.  Below is a screenshot of the the application.
 
 ![LabelImg](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/labelObjects.png)
 
-## Data Augmentation <a name="DataAug"></a>
+## Preprocessing - Data Augmentation <a name="DataAug"></a>
 
-Using this [libray](https://github.com/Paperspace/DataAugmentationForObjectDetection), this project will take the orginally provided photos and create syntetic images for traing to boost model performance.  Below are a few different examples, please note the object labels are updated for the image. 
+Using this [libray](https://github.com/Paperspace/DataAugmentationForObjectDetection), this project will take the orginally provided photos and create syntetic images for traing to boost model performance.  This process is automated by provided scripts, but the user will need to determine the amount of synetic training examples that will be created. 
+
+Below are a few different examples, please note the object labels are updated for the image.
 
 ![AugImg1](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/imgAug1.png)
 ![AugImg2](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/imgAug2.png)
@@ -237,7 +242,7 @@ If this command is successful, then the trained inference graph will be created.
 ls ~/trained-inference-graphs/output_inference_graph_v1.pb
 ```
 
-15.  Convert Tensorflow model to Tensorflow Lite model.
+2.  Convert Tensorflow model to Tensorflow Lite model.
 ```bash
 python3 ~/tensorflow/models/research/object_detection/export_tflite_ssd_graph.py \
     --input_type=image_tensor \
@@ -249,11 +254,11 @@ python3 ~/tensorflow/models/research/object_detection/export_tflite_ssd_graph.py
     --max_detections=10
 ```
 
-2. Evaulated the Saved Model using CLI tools.  
+3. Evaulated the Saved Model using CLI tools.  
 ```bash
 saved_model_cli show --dir ~/trained-inference-graphs/output_inference_graph_v1/saved_model --all
 ```
-3. Convert Tensorflow model to Tensorflow Lite model with TOCO.
+4. Convert Tensorflow model to Tensorflow Lite model with TOCO.
 ```bash
 #Convert TF Graphs to TFLite Model
 toco --output_file=~/LogoObjD.tflite \
