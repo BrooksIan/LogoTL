@@ -73,13 +73,13 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 
 ## Preprocessing - Image and Label Preparation (Optional)<a name="ImgPrep"></a>
 
-Using LabelImg, the create object label annotation XML files.  Please note, these files have been provided in this project, and they are avaiable in the Images/train/ or Images/test/ directories.  Below is a screenshot of the the application.
+Since this is an Object Detection model, images and annotation labels, which x,y coordinate information on the location of the object in the image, are both required for training.  To create these label annotations, the software package LabelImg can create the object's label annotation into XML files.  Please note this step is optional, these files have been provided in this project, and they are avaiable in the Images/train/ or Images/test/ directories.  Below is a screenshot of the the application.
 
 ![LabelImg](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/labelObjects.png)
 
 ## Preprocessing - Data Augmentation <a name="DataAug"></a>
 
-Using this [libray](https://github.com/Paperspace/DataAugmentationForObjectDetection), this project will take the orginally provided photos and create syntetic images for traing to boost model performance.  This process is automated by provided scripts, but the user will need to determine the amount of synetic training examples that will be created. 
+Considering this is a Deep Learning model, the training set should be in the 1000s of photographs, but this project only has 10s of photos. In order to create trainset that is proper size, Data Augmentation will be required to create new synetic images for training.  Using this [libray](https://github.com/Paperspace/DataAugmentationForObjectDetection), this project will take the orginally provided photos and create syntetic images for traing to boost model performance.  This process is automated by provided scripts, but the user will need to determine the amount of synetic training examples that will be created. 
 
 Below are a few different examples, please note the object labels are updated for the image.
 
