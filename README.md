@@ -193,34 +193,7 @@ python3 ~/scripts/train.py --logtostderr --train_dir=~/training/ \
 ```
   If Everything goes to plan, then you should see this type of output with steps.  Please keep in mind this could take HOURS if using CPU(s) to complete:
 
-```bash
-Use standard file APIs to check for files with this prefix.
-INFO:tensorflow:Restoring parameters from pre-trained-model/ssd_inception_v2_coco_2018_01_28/model.ckpt
-INFO:tensorflow:Restoring parameters from pre-trained-model/ssd_inception_v2_coco_2018_01_28/model.ckpt
-INFO:tensorflow:Running local_init_op.
-INFO:tensorflow:Running local_init_op.
-INFO:tensorflow:Done running local_init_op.
-INFO:tensorflow:Done running local_init_op.
-INFO:tensorflow:Starting Session.
-INFO:tensorflow:Starting Session.
-INFO:tensorflow:Saving checkpoint to path training/model.ckpt
-INFO:tensorflow:Saving checkpoint to path training/model.ckpt
-INFO:tensorflow:Starting Queues.
-INFO:tensorflow:Starting Queues.
-INFO:tensorflow:global_step/sec: 0
-INFO:tensorflow:global_step/sec: 0
-INFO:tensorflow:Recording summary at step 0.
-INFO:tensorflow:Recording summary at step 0.
-INFO:tensorflow:global step 1: loss = 18.2354 (21.366 sec/step)
-INFO:tensorflow:global step 1: loss = 18.2354 (21.366 sec/step)
-INFO:tensorflow:global step 2: loss = 17.8257 (3.002 sec/step)
-INFO:tensorflow:global step 2: loss = 17.8257 (3.002 sec/step)
-INFO:tensorflow:global step 3: loss = 16.4008 (2.777 sec/step)
-INFO:tensorflow:global step 3: loss = 16.4008 (2.777 sec/step)
-INFO:tensorflow:global step 4: loss = 15.9959 (2.743 sec/step)
-INFO:tensorflow:global step 4: loss = 15.9959 (2.743 sec/step)
-INFO:tensorflow:global step 5: loss = 15.4355 (2.243 sec/step)
-```
+![modelBuild](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/modelTraining.png)
 
 You can also check the Tenorboard with this command
 ```bash
