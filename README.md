@@ -23,17 +23,20 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 2. [Links](#links)
     1. [Object Detection](#linksObjDect)
     2. [Image Augmentation For Object Detection](#linksImgAug)
+    3. [Tools](#linksTools)
+    4. [Converting Tensorflow Models to Tensorflow Lite Models](#linksConvert)
+
 3. [Image Prep](#ImgPrep)
+4. [Data Augmentation](#DataAug)
+5. [Model Build Instructions](#ModelBuild)
+    1. [CDSW Run Instructions](#ModelBuildCDSW)
+    2. [Quick Instructions](#ModelBuildLuck)
+    3. [Step By Step Command Line Instructions](#ModelBuildStepBy)
+6. [Convert Model Instructions](#ModelConvert)
 
-## This is the introduction <a name="introduction"></a>
+
+## Introduction <a name="introduction"></a>
 Some introduction text, formatted in heading 2 style
-
-### Sub paragraph <a name="subparagraph1"></a>
-This is a sub paragraph, formatted in heading 3 style
-
-## Another paragraph <a name="paragraph2"></a>
-The second paragraph text
-
 
 ## Links <a name="links"></a>
 **Object Detection**: <a name="linksObjDect"></a>
@@ -68,7 +71,7 @@ Using LabelImg, the create object label annotation XML files.  Please note, thes
 
 ![LabelImg](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/labelObjects.png)
 
-## Data Augmentation 
+## Data Augmentation <a name="DataAug"></a>
 
 Using this [libray](), this project will take the orginally provided photos and create syntetic images for traing to boost model performance.  Below are a few different examples, please note the object labels are updated for the image. 
 
@@ -78,17 +81,17 @@ Using this [libray](), this project will take the orginally provided photos and 
 ![AugImg4](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/imgAug4.png)
 
 
-## Model Build Instructions 
+## Model Build Instructions <a name="ModelBuild"></a>
 
 **Please Note**: Any scripts that use '~/\' in the path are assuming this is the home directory of the downloaded project.  This is the default for CDSW. 
 
-### CDSW Run Instructions
+### CDSW Run Instructions <a name="ModelBuildCDSW"></a>
 
 1.  In CSDW, download the project using the git url for [here.](https://github.com/BrooksIan/LogoTL.git) 
 
 2.  Open a new session, run the CDSW-build.sh script at the terminal prompt, which contains the following operating code. 
 
-### Quick Instructions (If you feel lucky)
+### Quick Instructions (If you feel lucky) <a name="ModelBuildLuck"></a>
 1. Download the project using the git url for [here.](https://github.com/BrooksIan/LogoTL.git) 
 
 2. Run at terminal prompt.
@@ -97,7 +100,7 @@ Using this [libray](), this project will take the orginally provided photos and 
 ./scripts/buildModel.sh
 ```
 
-### Step By Step Command Line Instructions
+### Step By Step Command Line Instructions <a name="ModelBuildStepBy"></a>
 
 1. Download the project using the git url for [here.](https://github.com/BrooksIan/LogoTL.git) 
 
@@ -248,7 +251,9 @@ $ ls -t ~/training/model.ckpt*
 /home/cdsw/training/model.ckpt-2954.data-00000-of-00001
 ```
 
-14. Export inference graph into Home directory.
+## Convert Model Instructions <a name="ModelConvert"></a>
+
+1. Export inference graph into Home directory.
 ```bash
 cd
 python3 ~/scripts/export_inference_graph.py --input_type image_tensor \
@@ -274,11 +279,11 @@ python3 ~/tensorflow/models/research/object_detection/export_tflite_ssd_graph.py
     --max_detections=10
 ```
 
-16. Evaulated the Saved Model using CLI tools.  
+2. Evaulated the Saved Model using CLI tools.  
 ```bash
 saved_model_cli show --dir ~/trained-inference-graphs/output_inference_graph_v1/saved_model --all
 ```
-17. Convert Tensorflow model to Tensorflow Lite model with TOCO.
+3. Convert Tensorflow model to Tensorflow Lite model with TOCO.
 ```bash
 #Convert TF Graphs to TFLite Model
 toco --output_file=~/LogoObjD.tflite \
@@ -298,6 +303,6 @@ toco --output_file=~/LogoObjD.tflite \
   --allow_custom_ops 
 ```
 
-18.  Use [Online Edge TPU Compiler](https://coral.withgoogle.com/web-compiler) to prepare LogoObjD.tflite model for TPU. 
+4.  Use [Online Edge TPU Compiler](https://coral.withgoogle.com/web-compiler) to prepare LogoObjD.tflite model for TPU. 
 
 
