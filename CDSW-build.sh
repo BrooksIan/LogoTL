@@ -1,6 +1,6 @@
 ########## Project Build ######
 ./scripts/setup.sh
-./scripts/ImagePrep.sh
+./scripts/imagePrep.sh
 ./scripts/buildModel.sh
 ##############################
 
