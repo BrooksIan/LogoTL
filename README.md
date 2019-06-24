@@ -112,6 +112,7 @@ Below are a few different examples, please note the object labels are updated fo
 2. Run at terminal prompt.
 ```bash
 ./scripts/setup.sh
+./scripts/imagePrep.sh
 ./scripts/buildModel.sh
 ```
 
@@ -190,16 +191,62 @@ python ~/scipts/xml_to_csv.py -i Images/train -o ~/annotations/train_labels.csv
 python ~/sciptsxml_to_csv.py -i Images/test -o ~/annotations/test_labels.csv
 ```
 
-2. Data Augmentation - Create 1000s images for training for the original images and CSV file from the previous step. 
+2. Data Augmentation - Create 1000s images for training and testing for the original images and CSV file from the previous step.  
+
 ```bash
-Under construction
+#Create New Dirs
+mkdir Images/test/pickle/
+mkdir Images/train/pickle/
+mkdir Images/test/DA
+mkdir Images/train/DA
+
+#Data Augmentation - Create Synthetic Training Images
+#Create Training Set
+python3 transformImages.py \
+    --input_dir=Images/train/ \
+    --numIters=100 \
+    --image_label_file=annotations/train_labels.csv \
+    --output_path=annotations/train_labels_DA.csv \
+    --label0=Cloudera \
+    --label1=Hortonworks \
+    --label2=ClouderaOrange
+
+#Create Test Set
+python3 transformImages.py \
+    --input_dir=Images/test/ \
+    --numIters=100 \
+    --image_label_file=annotations/test_labels.csv \
+    --output_path=annotations/test_labels_DA.csv \
+    --label0=Cloudera \
+    --label1=Hortonworks \
+    --label2=ClouderaOrange
 ```
 
-3. Convert CSV labels to Tensorflow TF-Record type. 
+3. Verify the syntethc image files were created with the file counts. 
 ```bash
-#Convert CSV to TF-Record
-python3 ~/scipts/generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=~/annotations/train_labels.csv --img_path=Images/train  --output_path=annotations/train.record
-python3 ~/scipts/generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=~/annotations/test_labels.csv --img_path=Images/test  --output_path=~/annotations/test.record
+ls -1 Images/test/DA | wc -l 
+ls -1 Images/training/DA | wc -l 
+```
+
+4. Convert CSV labels to Tensorflow TF-Record type. 
+```bash
+#Convert Training CSV to TF-Record
+python3 ~/scipts/generate_tfrecord.py \
+--label0=Cloudera \
+--label1=Hortonworks \
+--label2=ClouderaOrange \
+--csv_input=~/annotations/train_labels.csv \
+--img_path=Images/train  \
+--output_path=annotations/train.record
+
+#Convert Test CSV to TF-Record
+python3 ~/scipts/generate_tfrecord.py \
+--label0=Cloudera \
+--label1=Hortonworks \
+--label2 ClouderaOrange \
+--csv_input=~/annotations/test_labels.csv \
+--img_path=Images/test  \
+--output_path=~/annotations/test.record
 ```
 
 #### Transfer Learning - Retrain Model With New Detection Objects <a name="ModelBuildStepBy3"></a>
