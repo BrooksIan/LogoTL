@@ -28,19 +28,19 @@ from DataAugmentationForObjectDetection.data_aug.bbox_util import *
 import cv2 
 import pickle as pkl
 
-"""
+#"""
 #Define Application Flags
 flags = tf.app.flags
-flags.DEFINE_string('img_input_dir', 'Images/test/', 'Path to image director')
-flags.DEFINE_string('image_label_file', 'annotations/test_labels.csv', 'Path to the image label CSV file')
+flags.DEFINE_string('img_input_dir', 'Images/train/', 'Path to image director')
+flags.DEFINE_string('image_label_file', 'annotations/train_labels.csv', 'Path to the image label CSV file')
 flags.DEFINE_string('numIters', '100', 'Number of iterations for each image')
-flags.DEFINE_string('output_path', 'annotations/test_labels_DA.csv', 'Path to output image label CSV file')
+flags.DEFINE_string('output_path', 'annotations/train_labels_DA.csv', 'Path to output image label CSV file')
 flags.DEFINE_string('label0', 'Cloudera', 'Name of class[0] label')
 flags.DEFINE_string('label1', 'Hortonworks', 'Name of class[1] label')
 flags.DEFINE_string('label2', 'ClouderaOrange', 'Name of class[2] label')
-
+                              
 FLAGS = flags.FLAGS
-"""
+#"""
 
 #=============  Method - Write Pickle Files ======================
 def writePickleFile(image_fileName, objectAnnotation, ID, class_name):
@@ -76,7 +76,7 @@ def createSyntheticImage(image_fileName, pickleFile, image_id):
   saveDAImagePath =  FLAGS.img_input_dir + "DA/" + DAImageName
   matplotlib.image.imsave(saveDAImagePath, img_seq)
   
-  print('***Data Augmentation ** Synthetic Image Created} @ ' + saveDAImagePath) 
+  #print('***Data Augmentation ** Synthetic Image Created @ ' + saveDAImagePath) 
   
   return DAImageName, bboxes_seq #Return Object Boundary Boxes
   
@@ -121,7 +121,7 @@ def main(_):
             writeToCSVOutFile(header_row, 'w')
             
         else:
-            print(f'\t{row[0]} w:{row[1]} h:{row[2]} with object: {row[3]} at  xmin:{row[4]} ymin:{row[5]} xmax:{row[6]} ymax:{row[7]} ')
+            #print(f'\t{row[0]} w:{row[1]} h:{row[2]} with object: {row[3]} at  xmin:{row[4]} ymin:{row[5]} xmax:{row[6]} ymax:{row[7]} ')
             line_count += 1
             image_fileName = row[0]
             imageW = row[1]
@@ -156,6 +156,9 @@ def main(_):
                   xmaxBB = int(boundaryBoxes[0][2])
                   ymaxBB = int(boundaryBoxes[0][3])
                   
+                  DA_row = [ DAImageName , imageW, imageH, class_name, xminBB, yminBB, xmaxBB, ymaxBB]
+                  writeToCSVOutFile(DA_row, 'a')
+                  
                 else:
                   xminBB = int(xmin)
                   yminBB = int(ymin)
@@ -165,13 +168,14 @@ def main(_):
                 #print(boundaryBoxes)
               
                 # Write Output Row to CSV File
-                #DAID =  str(i) +'_'+ DAImageName 
-                DA_row = [ DAImageName , imageW, imageH, class_name, xminBB, yminBB, xmaxBB, ymaxBB]
-                writeToCSVOutFile(DA_row, 'a')
+                #DA_row = [ DAImageName , imageW, imageH, class_name, xminBB, yminBB, xmaxBB, ymaxBB]
+                #writeToCSVOutFile(DA_row, 'a')
+       
+            print('***Data Augmentation ** {FLAGS.numIters} Synthetic Images Created For Image ' + image_fileName) 
                                                            
-    print(f'Processed {line_count} images in CVS file: ' + label_file)  
+    print('Processed {line_count} images in CVS file: ' + label_file)  
   
-    #print('Successfully created the Output CSV Label File: {}'.format(output_path))
+    print('Successfully created the Output CSV Label File:{}'.format(output_path))
 
 #=============  End of Method - Main ==============================
 
