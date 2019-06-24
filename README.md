@@ -232,21 +232,21 @@ ls -1 ~/Images/training/DA | wc -l
 ```bash
 #Convert Training CSV to TF-Record
 python3 ~/scipts/generate_tfrecord.py \
---label0=Cloudera \
---label1=Hortonworks \
---label2=ClouderaOrange \
 --csv_input=~/annotations/train_labels_DA.csv \
 --img_path=~/Images/train/DA  \
---output_path=~/annotations/train.record
+--output_path=~/annotations/train.record \
+--label0=Cloudera \
+--label1=Hortonworks \
+--label2 ClouderaOrange
 
 #Convert Test CSV to TF-Record
 python3 ~/scipts/generate_tfrecord.py \
---label0=Cloudera \
---label1=Hortonworks \
---label2 ClouderaOrange \
 --csv_input=~/annotations/test_labels_DA.csv \
 --img_path=~/Images/test/DA  \
---output_path=~/annotations/test.record
+--output_path=~/annotations/test.record \
+--label0=Cloudera \
+--label1=Hortonworks \
+--label2 ClouderaOrange 
 ```
 
 #### Transfer Learning - Retrain Model With New Detection Objects <a name="ModelBuildStepBy3"></a>
