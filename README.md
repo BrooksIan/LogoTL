@@ -112,6 +112,7 @@ Below are a few different examples, please note the object labels are updated fo
 2. Run at terminal prompt.
 ```bash
 ./scripts/setup.sh
+./scripts/imagePrep.sh
 ./scripts/buildModel.sh
 ```
 
