@@ -15,24 +15,23 @@ python xml_to_csv.py -i Images/test -o annotations/test_labels.csv
 #Data Augmentation - Create Synthetic Training Images
 #Training Set
 python3 transformImages.py \
-    --input_dir Images/train/ \
-    --numIters 2 \
-    --image_label_file annotations/train_labels.csv \
-    --output_path annotations/train_labels_DA.csv \
-    --label0 Cloudera \
-    --label1 Hortonworks \
-    --label2 ClouderaOrange
+    --input_dir=Images/train/ \
+    --numIters=100 \
+    --image_label_file=annotations/train_labels.csv \
+    --output_path=annotations/train_labels_DA.csv \
+    --label0=Cloudera \
+    --label1=Hortonworks \
+    --label2=ClouderaOrange
 
 #Test Set
 python3 transformImages.py \
-    --input_dir Images/test/ \
-    --numIters 2 \
-    --image_label_file annotations/test_labels.csv \
-    --output_path annotations/test_labels_DA.csv \
-    --label0 Cloudera \
-    --label1 Hortonworks \
-    --label2 ClouderaOrange
-
+    --input_dir=Images/test/ \
+    --numIters=100 \
+    --image_label_file=annotations/test_labels.csv \
+    --output_path=annotations/test_labels_DA.csv \
+    --label0=Cloudera \
+    --label1=Hortonworks \
+    --label2=ClouderaOrange
 
 ##Convert CSV to TF-Record
 # From Home Directory
@@ -47,7 +46,7 @@ python3 generate_tfrecord.py \
 --img_path=Images/train/DA  \
 --output_path=annotations/train_DA.record
 
-#Post Data Augmentation - Training Set
+#Post Data Augmentation - Test Set
 python3 generate_tfrecord.py \
 --label0=Cloudera \
 --label1=Hortonworks \
