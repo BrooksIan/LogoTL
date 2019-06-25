@@ -7,7 +7,6 @@ The goal of this project is to build a Tensorflow Lite Object Detection model de
 
 This Github repo is designed to be optmized for Cloudera Data Science Workbench (CDSW), but it's not required.
 
-![logodetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/LogoDect.gif "logodect")
 ![hwlogodetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/HWLogoDect.gif "hwlogodect")
 ![clogodetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/ClouderaLogoDect.gif "clogodect")
 
