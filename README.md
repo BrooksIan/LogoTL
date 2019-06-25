@@ -213,7 +213,7 @@ python3 ~/scripts/transformImages.py \
 
 #Create Test Set
 python3 ~/scripts/transformImages.py \
-    --input_dir=Images/test/ \
+    --input_dir=~/Images/test/ \
     --numIters=100 \
     --image_label_file=~/annotations/test_labels.csv \
     --output_path=~/annotations/test_labels_DA.csv \
