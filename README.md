@@ -2,7 +2,7 @@
 ## Data Science
 ### Object Detection on Logos Using Tensorflow
 
-![objectdetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/both.jpg "objdect")
+![logodetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/LogoDect.gif "logodect")
 
 ## Introduction - Corporate Logo Object Detection <a name="introduction"></a>
 The goal of this project is to build a Tensorflow Lite Object Detection model designed to detect the Cloudera and Hortonworks logo.  This project will include the scripts, photos, and instructions to build the models from scatch, and this project will also include the resulting models for quick testing.
