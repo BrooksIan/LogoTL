@@ -387,5 +387,5 @@ edgetpu_detect_server --model LogoObjD_<***ID Number Here***>_edgetpu.tflite --l
     
     Here is an example: http://192.168.1.245:4664/
 
-
+![logodetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/LogoDect.gif "logodect")
 
