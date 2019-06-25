@@ -208,7 +208,7 @@ mkdir Images/train/DA
 #Data Augmentation - Create Synthetic Training Images
 #Create Training Set
 python3 scripts/transformImages.py \
-    --input_dir=~Images/train/ \
+    --input_dir=Images/train/ \
     --numIters=100 \
     --image_label_file=annotations/train_labels.csv \
     --output_path=annotations/train_labels_DA.csv \
