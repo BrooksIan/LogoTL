@@ -31,10 +31,10 @@ import pickle as pkl
 #"""
 #Define Application Flags
 flags = tf.app.flags
-flags.DEFINE_string('img_input_dir', 'Images/train/', 'Path to image director')
-flags.DEFINE_string('image_label_file', 'annotations/train_labels.csv', 'Path to the image label CSV file')
+flags.DEFINE_string('img_input_dir', '~/Images/train/', 'Path to image director')
+flags.DEFINE_string('image_label_file', '~/annotations/train_labels.csv', 'Path to the image label CSV file')
 flags.DEFINE_string('numIters', '100', 'Number of iterations for each image')
-flags.DEFINE_string('output_path', 'annotations/train_labels_DA.csv', 'Path to output image label CSV file')
+flags.DEFINE_string('output_path', '~/annotations/train_labels_DA.csv', 'Path to output image label CSV file')
 flags.DEFINE_string('label0', 'Cloudera', 'Name of class[0] label')
 flags.DEFINE_string('label1', 'Hortonworks', 'Name of class[1] label')
 flags.DEFINE_string('label2', 'ClouderaOrange', 'Name of class[2] label')
