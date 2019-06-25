@@ -321,7 +321,7 @@ cd
 python3 ~/scripts/export_inference_graph.py --input_type image_tensor \
 --pipeline_config_path ~/training/ssd_inception_v2_coco.config \
 --trained_checkpoint_prefix ~/training/model.ckpt-<***Check Point Number Here***> \
---output_directory ~/trained-inference-graphs/output_inference_graph_v1.pb
+--output_directory ~/trained-inference-graphs/output_inference_graph_v1
 ```
 
 If this command is successful, then the trained inference graph will be created. 
