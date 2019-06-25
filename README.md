@@ -191,7 +191,7 @@ python ~/scipts/xml_to_csv.py -i Images/train -o ~/annotations/train_labels.csv
 python ~/sciptsxml_to_csv.py -i Images/test -o ~/annotations/test_labels.csv
 ```
 
-2. Data Augmentation - Create 1000s images for training and testing for the original images and CSV file from the previous step.  
+2. Data Augmentation - Create images for training and testing for the original images and CSV file from the previous step.  The number of synthetic images created for each image is configured by numIters.  Please note, the labels defined here must match the classes and order listed in label_map.pbtxt. 
 
 ```bash
 #Create New Dirs
