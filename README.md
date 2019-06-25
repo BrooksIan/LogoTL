@@ -162,7 +162,7 @@ cp -r pycocotools ~/tensorflow/models/research/
 6. Download Google's protobuffer tools.
 ```bash
 # From tensorflow/models/research/
-cd ~/tensorflow/models/research/
+cd tensorflow/models/research/
 wget -O protobuf.zip https://github.com/google/protobuf/releases/download/v3.0.0/protoc-3.0.0-linux-x86_64.zip
 unzip protobuf.zip
 ```
@@ -170,14 +170,14 @@ unzip protobuf.zip
 7. Create protobuffers for Object Dectection model.
 ```bash
 # From tensorflow/models/research/
-cd ~/tensorflow/models/research/
+cd tensorflow/models/research/
 ./bin/protoc object_detection/protos/*.proto --python_out=.
 ```
 
 8.  Export Path to the protobuffer library.
 ```bash
 # From tensorflow/models/research/
-cd ~/tensorflow/models/research/
+cd tensorflow/models/research/
 export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
 ```
 
@@ -192,36 +192,36 @@ git clone https://github.com/Paperspace/DataAugmentationForObjectDetection.git
 1. Convert XML image labels to CSV. (Optional - CSV files have been provided in annotations Dir)
 ```bash
 #Convert XML Labels to CSV
-python ~/scipts/xml_to_csv.py -i Images/train -o ~/annotations/train_labels.csv
-python ~/scipts/xml_to_csv.py -i Images/test -o ~/annotations/test_labels.csv
+python scipts/xml_to_csv.py -i Images/train -o annotations/train_labels.csv
+python scipts/xml_to_csv.py -i Images/test -o annotations/test_labels.csv
 ```
 
 2. Data Augmentation - Create images for training and testing for the original images and CSV file from the previous step.  The number of synthetic images created for each image is configured by numIters.  Please note, the labels defined here must match the classes and order listed in label_map.pbtxt. 
 
 ```bash
 #Create New Dirs
-mkdir ~/Images/test/pickle/
-mkdir ~/Images/train/pickle/
-mkdir ~/Images/test/DA
-mkdir ~/Images/train/DA
+mkdir Images/test/pickle/
+mkdir Images/train/pickle/
+mkdir Images/test/DA
+mkdir Images/train/DA
 
 #Data Augmentation - Create Synthetic Training Images
 #Create Training Set
-python3 ~/scripts/transformImages.py \
-    --input_dir=~/Images/train/ \
+python3 scripts/transformImages.py \
+    --input_dir=~Images/train/ \
     --numIters=100 \
-    --image_label_file=~/annotations/train_labels.csv \
-    --output_path=~/annotations/train_labels_DA.csv \
+    --image_label_file=annotations/train_labels.csv \
+    --output_path=annotations/train_labels_DA.csv \
     --label0=Cloudera \
     --label1=Hortonworks \
     --label2=ClouderaOrange
 
 #Create Test Set
-python3 ~/scripts/transformImages.py \
-    --input_dir=~/Images/test/ \
+python3 scripts/transformImages.py \
+    --input_dir=Images/test/ \
     --numIters=100 \
-    --image_label_file=~/annotations/test_labels.csv \
-    --output_path=~/annotations/test_labels_DA.csv \
+    --image_label_file=annotations/test_labels.csv \
+    --output_path=annotations/test_labels_DA.csv \
     --label0=Cloudera \
     --label1=Hortonworks \
     --label2=ClouderaOrange
@@ -229,26 +229,26 @@ python3 ~/scripts/transformImages.py \
 
 3. Verify the syntethc image files were created with the file counts. 
 ```bash
-ls -1 ~/Images/test/DA | wc -l 
-ls -1 ~/Images/training/DA | wc -l 
+ls -1 Images/test/DA | wc -l 
+ls -1 Images/training/DA | wc -l 
 ```
 
 4. Convert CSV labels to Tensorflow TF-Record type. 
 ```bash
 #Convert Training CSV to TF-Record
-python3 ~/scipts/generate_tfrecord.py \
---csv_input=~/annotations/train_labels_DA.csv \
---img_path=~/Images/train/DA  \
---output_path=~/annotations/train.record \
+python3 scipts/generate_tfrecord.py \
+--csv_input=annotations/train_labels_DA.csv \
+--img_path=Images/train/DA  \
+--output_path=annotations/train.record \
 --label0=Cloudera \
 --label1=Hortonworks \
 --label2 ClouderaOrange
 
 #Convert Test CSV to TF-Record
-python3 ~/scipts/generate_tfrecord.py \
---csv_input=~/annotations/test_labels_DA.csv \
---img_path=~/Images/test/DA  \
---output_path=~/annotations/test.record \
+python3 scipts/generate_tfrecord.py \
+--csv_input=annotations/test_labels_DA.csv \
+--img_path=Images/test/DA  \
+--output_path=annotations/test.record \
 --label0=Cloudera \
 --label1=Hortonworks \
 --label2=ClouderaOrange 
@@ -262,13 +262,13 @@ python3 ~/scipts/generate_tfrecord.py \
 cd
 
 #Update PATH and PYTHONPATH
-export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research/
-export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research/slim
-export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research/object_detection
+export PYTHONPATH=$PYTHONPATH:tensorflow/models/research/
+export PYTHONPATH=$PYTHONPATH:tensorflow/models/research/slim
+export PYTHONPATH=$PYTHONPATH:tensorflow/models/research/object_detection
 export PATH=$PATH:~/.local/bin 
 
-python3 ~/scripts/train.py --logtostderr --train_dir=~/training/ \
---pipeline_config_path=~/training/ssd_inception_v2_coco.config
+python3 scripts/train.py --logtostderr --train_dir=training/ \
+--pipeline_config_path=training/ssd_inception_v2_coco.config
 ```
   If Everything goes to plan, then you should see this type of output with steps.  Please keep in mind this could take HOURS if using CPU(s) to complete:
 
@@ -276,16 +276,16 @@ python3 ~/scripts/train.py --logtostderr --train_dir=~/training/ \
 
 You can also check the Tenorboard with this command
 ```bash
-tensorboard --logdir=~/training --port=8080
+tensorboard --logdir=training --port=8080
 ```
 
 2. Find the Highest Ranked Checkpoint File. Make a note of the file’s name, as it will be passed as an argument when we call the export_inference_graph.py script.
 ```bash
-ls -t ~/training/model.ckpt*
+ls -t training/model.ckpt*
 ```
 If training was sucessful, then results will be displayed.  Please keep in mind, the numeric values will be different. 
 ```bash
-$ ls -t ~/training/model.ckpt*
+$ ls -t training/model.ckpt*
 /home/cdsw/training/model.ckpt-4041.meta
 /home/cdsw/training/model.ckpt-4041.index
 /home/cdsw/training/model.ckpt-4041.data-00000-of-00001
@@ -309,13 +309,13 @@ $ ls -t ~/training/model.ckpt*
 cd
 
 #Update PATH and PYTHONPATH
-export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research/
-export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research/slim
-export PYTHONPATH=$PYTHONPATH:~/tensorflow/models/research/object_detection
+export PYTHONPATH=$PYTHONPATH:tensorflow/models/research/
+export PYTHONPATH=$PYTHONPATH:tensorflow/models/research/slim
+export PYTHONPATH=$PYTHONPATH:tensorflow/models/research/object_detection
 export PATH=$PATH:~/.local/bin 
 
-python3 ~/scripts/train.py --logtostderr --train_dir=~/training/ \
---pipeline_config_path=~/training/ssd_inception_v2_coco.config
+python3 scripts/train.py --logtostderr --train_dir=training/ \
+--pipeline_config_path=training/ssd_inception_v2_coco.config
 ```
 
 ## Convert Tensorflow Model to Tensorflow Lite Instructions <a name="ModelConvert"></a>
@@ -323,24 +323,24 @@ python3 ~/scripts/train.py --logtostderr --train_dir=~/training/ \
 1. Export inference graph into Home directory.
 ```bash
 cd
-python3 ~/scripts/export_inference_graph.py --input_type image_tensor \
---pipeline_config_path ~/training/ssd_inception_v2_coco.config \
---trained_checkpoint_prefix ~/training/model.ckpt-<***Check Point Number Here***> \
---output_directory ~/trained-inference-graphs/output_inference_graph_v1
+python3 scripts/export_inference_graph.py --input_type image_tensor \
+--pipeline_config_path training/ssd_inception_v2_coco.config \
+--trained_checkpoint_prefix training/model.ckpt-<***Check Point Number Here***> \
+--output_directory trained-inference-graphs/output_inference_graph_v1
 ```
 
 If this command is successful, then the trained inference graph will be created. 
 ```bash
-ls ~/trained-inference-graphs/output_inference_graph_v1.pb
+ls trained-inference-graphs/output_inference_graph_v1.pb
 ```
 
 2.  Convert Tensorflow model to Tensorflow Lite model.
 ```bash
-python3 ~/tensorflow/models/research/object_detection/export_tflite_ssd_graph.py \
+python3 tensorflow/models/research/object_detection/export_tflite_ssd_graph.py \
     --input_type=image_tensor \
     --input_shape={"image_tensor":[1,600,600,3]} \
-    --pipeline_config_path=~/trained-inference-graphs/output_inference_graph_v1/pipeline.config \
-    --trained_checkpoint_prefix=~/trained-inference-graphs/output_inference_graph_v1/model.ckpt \
+    --pipeline_config_path=trained-inference-graphs/output_inference_graph_v1/pipeline.config \
+    --trained_checkpoint_prefix=trained-inference-graphs/output_inference_graph_v1/model.ckpt \
     --output_directory=~/trainedTFLite \
     --add_postprocessing_op=true \
     --max_detections=10
@@ -348,13 +348,13 @@ python3 ~/tensorflow/models/research/object_detection/export_tflite_ssd_graph.py
 
 3. Evaulated the Saved Model using CLI tools.  
 ```bash
-saved_model_cli show --dir ~/trained-inference-graphs/output_inference_graph_v1/saved_model --all
+saved_model_cli show --dir trained-inference-graphs/output_inference_graph_v1/saved_model --all
 ```
 4. Convert Tensorflow model to Tensorflow Lite model with TOCO.
 ```bash
 #Convert TF Graphs to TFLite Model
-toco --output_file=~/trainedModels/LogoObjD.tflite \
-  --graph_def_file=~/trainedTFLite/tflite_graph.pb \
+toco --output_file=trainedModels/LogoObjD.tflite \
+  --graph_def_file=trainedTFLite/tflite_graph.pb \
   --input_format=TENSORFLOW_GRAPHDEF \
   --inference_input_type=QUANTIZED_UINT8 \
   --inference_type=QUANTIZED_UINT8 \
