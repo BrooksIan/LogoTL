@@ -9,6 +9,8 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 
 ![hwlogodetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/HWLogoDect.gif "hwlogodect")
 ![clogodetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/ClouderaLogoDect.gif "clogodect")
+![COlogodetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/CLogoDect.gif "cologodect")
+
 
 
 **Language**: Python
