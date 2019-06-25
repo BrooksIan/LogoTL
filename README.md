@@ -246,7 +246,7 @@ python3 ~/scipts/generate_tfrecord.py \
 --output_path=~/annotations/test.record \
 --label0=Cloudera \
 --label1=Hortonworks \
---label2 ClouderaOrange 
+--label2=ClouderaOrange 
 ```
 
 #### Transfer Learning - Retrain Model With New Detection Objects <a name="ModelBuildStepBy3"></a>
