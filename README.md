@@ -282,6 +282,9 @@ tensorboard --logdir=training --port=8080
 2. Find the Highest Ranked Checkpoint File. Make a note of the file’s name, as it will be passed as an argument when we call the export_inference_graph.py script.
 ```bash
 ls -t training/model.ckpt*
+
+# This command returns only the highest check point value
+ls -t ~/training/model.ckpt* | head -1 | cut -d'-' -f 2 | cut -d'.' -f 1
 ```
 If training was sucessful, then results will be displayed.  Please keep in mind, the numeric values will be different. 
 ```bash
