@@ -351,7 +351,7 @@ python3 tensorflow/models/research/object_detection/export_tflite_ssd_graph.py \
     --input_shape={"image_tensor":[1,600,600,3]} \
     --pipeline_config_path=trained-inference-graphs/output_inference_graph_v1/pipeline.config \
     --trained_checkpoint_prefix=trained-inference-graphs/output_inference_graph_v1/model.ckpt \
-    --output_directory=~/trainedTFLite \
+    --output_directory=trainedTFLite \
     --add_postprocessing_op=true \
     --max_detections=10
 ```
