@@ -3,7 +3,7 @@
 ### Object Detection on Logos Using Tensorflow
 
 ## Introduction - Corporate Logo Object Detection <a name="introduction"></a>
-The goal of this project is to build a Tensorflow Lite Object Detection model designed to detect the Cloudera and Hortonworks logo.  This project will include the scripts, photos, and instructions to build the models from scatch, and this project will also include the resulting models for quick testing.
+The goal of this project is to build a Tensorflow Lite Object Detection model designed to detect the Cloudera and Hortonworks logos.  This project will include the scripts, photos, and instructions to build the models from scratch, and this project will also include the resulting models for quick testing.    
 
 This Github repo is designed to be optmized for Cloudera Data Science Workbench (CDSW), but it's not required.
 
@@ -89,7 +89,7 @@ Since this is an Object Detection model, images and annotation labels, which x,y
 
 ## Data Augmentation - Synthetic Image Creation <a name="DataAug"></a>
 
-Considering this is a Deep Learning model, the training set should be in the 1000s of photographs, but this project only has 10s of photos. In order to create trainset that is proper size, Data Augmentation will be required to create synthetic images for training.  Using this [libray](https://github.com/Paperspace/DataAugmentationForObjectDetection), this project will take the orginally provided photos and create syntetic images for traing to boost model performance.  This [article](https://blog.paperspace.com/data-augmentation-for-bounding-boxes/) on the subject is a must read to fully understand this project.
+Considering this is a Deep Learning model, the training set should be in the 1000s of photographs, but this project only has 10s of photos. In order to create trainset that is proper size, Data Augmentation will be required to create synthetic images for training.  Using this [libray](https://github.com/Paperspace/DataAugmentationForObjectDetection), this project will take the orginally provided photos and create synthetic images for traing to boost model performance.  This [article](https://blog.paperspace.com/data-augmentation-for-bounding-boxes/) on the subject is a must read to fully understand this project.
 
 This process is automated by provided scripts, but the user will need to determine the amount of synthetic training examples that will be created. 
 
