@@ -326,6 +326,13 @@ python3 scripts/train.py --logtostderr --train_dir=training/ \
 1. Export inference graph into Home directory.
 ```bash
 cd
+
+#Optional at this point if PATH and PYTHONPATH are already set
+export PYTHONPATH=$PYTHONPATH:tensorflow/models/research/
+export PYTHONPATH=$PYTHONPATH:tensorflow/models/research/slim
+export PYTHONPATH=$PYTHONPATH:tensorflow/models/research/object_detection
+export PATH=$PATH:~/.local/bin 
+
 python3 scripts/export_inference_graph.py --input_type image_tensor \
 --pipeline_config_path training/ssd_inception_v2_coco.config \
 --trained_checkpoint_prefix training/model.ckpt-<***Check Point Number Here***> \
