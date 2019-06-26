@@ -1,18 +1,10 @@
-#Dataset Prep
+# Build Tensorflow Model Script
+#!/bin/bash 
 
-##Convert XML Labels to CSV
-# From Home Directory
-cd
-python ~/scripts/xml_to_csv.py -i ~/Images/train -o ~/annotations/train_labels.csv
-python ~/scripts/xml_to_csv.py -i ~/Images/test -o ~/annotations/test_labels.csv
-
-##Convert CSV to TF-Record
-# From Home Directory
-cd
-python3 ~/scripts/generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=~/annotations/train_labels.csv --img_path=~/Images/train  --output_path=~/annotations/train.record
-python3 ~/scripts/generate_tfrecord.py --label0=Cloudera --label1=Hortonworks --csv_input=~/annotations/test_labels.csv --img_path=~/Images/test  --output_path=~/annotations/test.record
+echo '####### Start Model Build #######'
 
 #Train Tensorflow Model
+echo '####### Train Model #######'
 
 #From Home Directory
 cd
@@ -20,17 +12,31 @@ python3 ~/scripts/train.py --logtostderr --train_dir=~/training/ \
 --pipeline_config_path=~/training/ssd_inception_v2_coco.config
 
 #Find the Highest Ranked Checkpoint File
-ls -t ~/training/model.ckpt* | head -1
+ls -t ~/training/model.ckpt* | head -1 | cut -d'-' -f 2 | cut -d'.' -f 1
 #Make a note of the file’s name, as it will be passed as an argument when we call the export_inference_graph.py script.
 
+#Save Check Point Value
+CKPNUM=$(ls -t ~/training/model.ckpt* | head -1 | cut -d'-' -f 2 | cut -d'.' -f 1)
+echo '####### The highest check point value is:' $CKPNUM
+
 #Export Inference Graph For TFLite
+echo '####### Export Inference Graph #######'
+
 cd
-python3 ~/scripts/export_inference_graph.py --input_type image_tensor \
---pipeline_config_path ~/training/ssd_inception_v2_coco.config \
---trained_checkpoint_prefix ~/training/model.ckpt-4041 \
---output_directory ~/trained-inference-graphs/output_inference_graph_v1.pb
+python3 ~/scripts/export_inference_graph.py \
+--input_type=image_tensor \
+--pipeline_config_path=~/training/ssd_inception_v2_coco.config \
+--trained_checkpoint_prefix=~/training/model.ckpt-$CKPNUM \
+--output_directory=~/trained-inference-graphs/output_inference_graph_v4
+
+#Check Saved Model
+echo '####### Check Saved Model #######'
+
+saved_model_cli show --dir trained-inference-graphs/output_inference_graph_v1/saved_model --all
 
 #Export TFLite SSD Inference Graph
+echo '####### Export TFLite SSD Inference Graph #######'
+
 python3 ~/tensorflow/models/research/object_detection/export_tflite_ssd_graph.py \
     --input_type=image_tensor \
     --input_shape={"image_tensor":[1,600,600,3]} \
@@ -39,12 +45,11 @@ python3 ~/tensorflow/models/research/object_detection/export_tflite_ssd_graph.py
     --output_directory=~/trainedTFLite \
     --add_postprocessing_op=true \
     --max_detections=10
-
-#Check Saved Model 
-saved_model_cli show --dir ~/trained-inference-graphs/output_inference_graph_v1/saved_model --all
-
+    
 #Convert with TOCO
 #Convert TF Graphs to TFLite Model
+echo '####### Convert TF Graphs to TFLite Model #######'
+
 toco --output_file=~/trainedModels/LogoObjD.tflite \
   --graph_def_file=~/trainedTFLite/tflite_graph.pb \
   --input_format=TENSORFLOW_GRAPHDEF \
@@ -57,6 +62,6 @@ toco --output_file=~/trainedModels/LogoObjD.tflite \
   --input_data_type=QUANTIZED_UINT8 \
   --mean_values=128 \
   --std_dev_values=128 \
-  --default_ranges_min=0.0 \
+  --default_ranges_min=0 \
   --default_ranges_max=300 \
   --allow_custom_ops 

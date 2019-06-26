@@ -1,3 +1,7 @@
+# Set Up Script
+echo '####### Start Project Setup d#######'
+
+
 #Install Tensorflow
 pip3 install tensorflow
 pip install tensorflow
@@ -47,6 +51,9 @@ cd ~/tensorflow/models/research
 # From tensorflow/models/research/
 cd ~/tensorflow/models/research
 export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
+
+cd
+git clone https://github.com/Paperspace/DataAugmentationForObjectDetection.git
 
 #Export Inference Graph From Home Directory
 cd

@@ -1,4 +1,5 @@
-#git clone https://github.com/Paperspace/DataAugmentationForObjectDetection.git
+#Image Preprocessing
+echo '####### Start Image Preprocessing #######'
 
 #Create New Dirs
 mkdir ~/Images/test/pickle/
@@ -7,12 +8,16 @@ mkdir ~/Images/test/DA
 mkdir ~/Images/train/DA
 
 ##Convert XML Labels to CSV
+echo '####### Convert XML Labels to CSV #######'
+
 # From Home Directory
 cd
-python ~/scirpts/xml_to_csv.py -i ~/Images/train -o ~/annotations/train_labels.csv
+python ~/scripts/xml_to_csv.py -i ~/Images/train -o ~/annotations/train_labels.csv
 python ~/scripts/xml_to_csv.py -i ~/Images/test -o ~/annotations/test_labels.csv
 
 #Data Augmentation - Create Synthetic Training Images
+echo '####### Data Augmentation - Create Synthetic Training Images #######'
+
 #Training Set
 python3 ~/scripts/transformImages.py \
     --input_dir=~/Images/train/ \
@@ -34,6 +39,8 @@ python3 ~/scripts/transformImages.py \
     --label2=ClouderaOrange
 
 ##Convert CSV to TF-Record
+echo '####### Convert CSV to TF-Record #######'
+
 # From Home Directory
 cd
 
