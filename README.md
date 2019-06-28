@@ -67,6 +67,7 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 - [Convert Tensorflow Model to TFLite](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/convert/cmdline_reference.md "link8")
 
 **Google Coral Dev Board**: <a name="linksCoral"></a>
+- [Coral Board Hardware](https://coral.withgoogle.com/)
 - [Coral Board Getting Started](https://coral.withgoogle.com/docs/dev-board/get-started/)
 - [Retrain Object Detection Model Tutorial](https://coral.withgoogle.com/docs/edgetpu/retrain-detection/)
 - [Coral Dev Board - Hands On](https://medium.com/@aallan/hands-on-with-the-coral-dev-board-adbcc317b6af)
