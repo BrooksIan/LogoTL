@@ -90,7 +90,7 @@ Since this is an Object Detection model, images and annotation labels, which x,y
 
 ## Data Augmentation - Synthetic Image Creation <a name="DataAug"></a>
 
-Considering this is a Deep Learning model, the training set should be in the 1000s of photographs, but this project only has 10s of photos. In order to create trainset that is proper size, Data Augmentation will be required to create synthetic images for training.  Using this [libray](https://github.com/Paperspace/DataAugmentationForObjectDetection), this project will take the orginally provided photos and create synthetic images for traing to boost model performance.  This [article](https://blog.paperspace.com/data-augmentation-for-bounding-boxes/) on the subject is a must read to fully understand this project.
+Considering this is a Deep Learning model, the training set should be in the 1000s of photographs, but this project only has 10s of photos. In order to create trainset that is proper size, Data Augmentation will be required to create synthetic images for training.  Using this [library](https://github.com/Paperspace/DataAugmentationForObjectDetection), this project will take the originally provided photos and create synthetic images for training to boost model performance.  This [article](https://blog.paperspace.com/data-augmentation-for-bounding-boxes/) on the subject is a must read to fully understand this project.
 
 This process is automated by provided scripts, but the user will need to determine the amount of synthetic training examples that will be created. 
 
@@ -168,7 +168,7 @@ wget -O protobuf.zip https://github.com/google/protobuf/releases/download/v3.0.0
 unzip protobuf.zip
 ```
 
-7. Create protobuffers for Object Dectection model.
+7. Create protobuffers for Object Detection model.
 ```bash
 # From tensorflow/models/research/
 cd tensorflow/models/research/
@@ -275,7 +275,7 @@ python3 scripts/train.py --logtostderr --train_dir=training/ \
 
 ![modelBuild](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/modelTraining.png)
 
-You can also check the Tenorboard with this command
+You can also check the Tensorboard with this command
 ```bash
 tensorboard --logdir=training --port=8080
 ```
