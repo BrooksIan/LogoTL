@@ -3,8 +3,8 @@ echo '####### Start Project Setup #######'
 
 # Create Anaconda Tensorflow Package
 echo '####### Conda Setup #######'
-conda create -n tensorflow pip python=3.8
-conda activate tensorflow
+#conda create -n tensorflow pip python=3.8
+#conda activate tensorflow
 
 # Install Tensorflow
 echo '  <><><> Install Tensorflow 2 <><><>'
@@ -48,3 +48,8 @@ python3 -m pip install .
 echo '  <><><> Test Project Installation  <><><> '
 cd /home/cdsw/tensorflow/models/research/
 python3 object_detection/builders/model_builder_tf2_test.py
+
+# Download Base TF Model
+echo '  <><><> Download Base TF Model  <><><> '
+cd
+#./scripts/downloadModel.sh
