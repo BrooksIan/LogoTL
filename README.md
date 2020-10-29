@@ -1,27 +1,20 @@
-# Transfer Learning on Tensorflow and Tensorflow Lite Models 
-## Data Science
-### Object Detection on Logos Using Tensorflow
+# Cloudera Logo Object Detection 
+## Deep Learning
+### Transfer Learning with Tensorflow
 
 ## Introduction - Corporate Logo Object Detection <a name="introduction"></a>
-The goal of this project is to build a Tensorflow Lite Object Detection model designed to detect the Cloudera and Hortonworks logos.  This project will include the scripts, photos, and instructions to build the models from scratch, and this project will also include the resulting models for quick testing.    
-
-This Github repo is designed to be optmized for Cloudera Data Science Workbench (CDSW), but it's not required.
+The goal of this project is to build a Tensorflow Object Detection model designed to detect the Cloudera and Hortonworks logos.  This project will include the scripts, photos, and instructions that are required to follow this project at home. This Github repo include annotated images and completed models for quick testing.    
 
 ![hwlogodetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/HWLogoDect.gif "hwlogodect")
 ![clogodetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/ClouderaLogoDect.gif "clogodect")
 ![COlogodetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/CLogoDect.gif "cologodect")
 
-
-
 **Language**: Python
-
 **Requirements**: 
-- Python 3.6
-- Tensorflow 1.13
-- CDSW 1.5 (For quick build)
+- Python 3.8
+- Tensorflow 2.2
 
 **Author**: Ian R Brooks
-
 **Follow**: [LinkedIn - Ian Brooks PhD](https://www.linkedin.com/in/ianrbrooksphd/)
 
 # Table of Contents
@@ -36,7 +29,7 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 3. [Image Preprocessing - Image and Label Preparation (Optional)](#ImgPrep)
 4. [Data Augmentation - Synthetic Image Creation](#DataAug)
 5. [Build Tensorflow Model Instructions](#ModelBuild)
-    1. [CDSW Run Instructions](#ModelBuildCDSW)
+    1. [CDSW/CML Run Instructions](#ModelBuildCDSW)
     2. [Quick Instructions](#ModelBuildLuck)
     3. [Step By Step Command Line Instructions](#ModelBuildStepBy)
         1. [Download and Install Libraries](#ModelBuildStepBy1)
@@ -50,6 +43,7 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 
 ## Links <a name="links"></a>
 **Object Detection**: <a name="linksObjDect"></a>
+- [TensorFlow 2 Object Detection API tutorial](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html)
 - [Object Detection Tutorial Link](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html "link1")
 - [Another Object Detection Tutorial]( https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9 "link4")
 - [Yet Another Object Detection Tutorial](https://3sidedcube.com/guide-retraining-object-detection-models-tensorflow/ "link5")
@@ -61,7 +55,8 @@ This Github repo is designed to be optmized for Cloudera Data Science Workbench 
 - [Image Augmentation Examples in Python](https://towardsdatascience.com/image-augmentation-examples-in-python-d552c26f2873)
 - [Image Augmentation Using Keras](https://machinelearningmastery.com/image-augmentation-deep-learning-keras/)
 
-**Converting Tensorflow Models to Tensorflow Lite Models**: <a name="linksConvert"></a>
+**Converting Tensorflow Models**: <a name="linksConvert"></a>
+- [Importing a TensorFlow GraphDef based Models into TensorFlow.js](https://www.tensorflow.org/js/tutorials/conversion/import_saved_model)
 - [Exporting Tained Model for Inference](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models.md "link7")
 - [Convert Tensorflow Model for TPU](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tpu_exporters.md "link6")
 - [Convert Tensorflow Model to TFLite](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/convert/cmdline_reference.md "link8")
@@ -106,10 +101,9 @@ Below are a few different examples, please note the object labels are updated fo
 
 **Please Note**: Any scripts that use '~/\' in the path are assuming this is the home directory of the downloaded project.  This is the default for CDSW. 
 
-### CDSW Run Instructions <a name="ModelBuildCDSW"></a>
+### CDSW/CML Run Instructions <a name="ModelBuildCDSW"></a>
 
 1.  In CSDW, download the project using the git url for [here.](https://github.com/BrooksIan/LogoTL.git) 
-
 2.  Open a new session, run the CDSW-build.sh script at the terminal prompt, which contains the following operating code. 
 
 ### Quick Instructions (If you feel lucky) <a name="ModelBuildLuck"></a>
