@@ -34,14 +34,8 @@ The goal of this project is to build a Tensorflow Object Detection model designe
     1. [CDSW/CML Run Instructions](#ModelBuildCDSW)
     2. [Quick Instructions](#ModelBuildLuck)
     3. [Step By Step Command Line Instructions](#ModelBuildStepBy)
-        1. [Download and Install Libraries](#ModelBuildStepBy1)
-        2. [Preprocess the Images](#ModelBuildStepBy2)
-        3. [Transfer Learning - Retrain Model With New Detection Objects](#ModelBuildStepBy3)
             
-6. [Convert Tensorflow Model to Tensorflow Lite Instructions](#ModelConvert)
-7. [Compile Tensorflow Lite Model for Edge TPU](#EdgeTPU)
-8. [Deploy Object Detection Model Coral Dev Board](#CoralDeploy)
-
+6. [Convert Tensorflow Models](#ModelConvert)
 
 ## Links <a name="links"></a>
 **Object Detection**: <a name="linksObjDect"></a>
