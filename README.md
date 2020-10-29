@@ -148,12 +148,14 @@ Below are a few different examples, please note the object labels are updated fo
 ```bash
 ./scripts/exportModel.sh
 ```
+![modelsaved](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/saved_model.png)
 
 ## Converty TF Saved Model To Java Script <a name="ModelConvert"></a>
 1. Export model 
 ```bash
 ./scripts/exportModelJS.sh
 ```
+![modeljs](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/model_convertJS.png)
 
 
 ![logodetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/LogoDect.gif "logodect")
