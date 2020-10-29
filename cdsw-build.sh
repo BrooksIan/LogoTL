@@ -4,4 +4,5 @@
 ./scripts/buildModel.sh
 ./scripts/exportModel.sh
 ./scripts/exportModelJS.sh
+./scripts/convertTF2TFL.sh
 ##############################
