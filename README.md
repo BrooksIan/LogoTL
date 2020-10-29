@@ -133,6 +133,15 @@ Below are a few different examples, please note the object labels are updated fo
 ```bash
 ./scripts/buildModel.sh
 ```
+![modeltrain0](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/model_training0.png)
+![modeltrain1](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/model_training1.png)
+
+2. Evaluate model
+```bash
+./scripts/evalModel.sh
+```
+![modeleval](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/model_eval.png)
+
 
 ####  Export TensorFlow Model to Saved Model Format <a name="ModelBuildStepBy4"></a>
 1. Export model 
