@@ -53,6 +53,8 @@ The goal of this project is to build a Tensorflow Object Detection model designe
 
 **Converting Tensorflow Models**: <a name="linksConvert"></a>
 - [Importing a TensorFlow GraphDef based Models into TensorFlow.js](https://www.tensorflow.org/js/tutorials/conversion/import_saved_model)
+- [Getting Started With TensorFlow.js](https://www.tensorflow.org/js/tutorials)
+- [Convert TensorFlow Saved Model to TF Lite Model](https://www.tensorflow.org/lite/convert)
 - [Exporting Tained Model for Inference](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models.md "link7")
 - [Convert Tensorflow Model for TPU](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tpu_exporters.md "link6")
 - [Convert Tensorflow Model to TFLite](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/convert/cmdline_reference.md "link8")
