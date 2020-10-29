@@ -10,11 +10,13 @@ The goal of this project is to build a Tensorflow Object Detection model designe
 ![COlogodetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/CLogoDect.gif "cologodect")
 
 **Language**: Python
+
 **Requirements**: 
 - Python 3.8
 - Tensorflow 2.2
 
 **Author**: Ian R Brooks
+
 **Follow**: [LinkedIn - Ian Brooks PhD](https://www.linkedin.com/in/ianrbrooksphd/)
 
 # Table of Contents
@@ -132,98 +134,17 @@ Below are a few different examples, please note the object labels are updated fo
 ./scripts/buildModel.sh
 ```
 
-####  Export TF Model to Saved Model Format <a name="ModelBuildStepBy4"></a>
+####  Export TensorFlow Model to Saved Model Format <a name="ModelBuildStepBy4"></a>
 1. Export model 
 ```bash
 ./scripts/exportModel.sh
 ```
 
-####  Export Saved Model To Java Script Format <a name="ModelBuildStepBy5"></a>
+## Converty TF Saved Model To Java Script <a name="ModelConvert"></a>
 1. Export model 
 ```bash
 ./scripts/exportModelJS.sh
 ```
 
-## Convert Tensorflow Model to Tensorflow Lite Instructions <a name="ModelConvert"></a>
-
-1. Export inference graph into Home directory.
-```bash
-cd
-
-#Optional at this point if PATH and PYTHONPATH are already set
-export PYTHONPATH=$PYTHONPATH:tensorflow/models/research/
-export PYTHONPATH=$PYTHONPATH:tensorflow/models/research/slim
-export PYTHONPATH=$PYTHONPATH:tensorflow/models/research/object_detection
-export PATH=$PATH:~/.local/bin 
-
-python3 scripts/export_inference_graph.py --input_type image_tensor \
---pipeline_config_path training/ssd_inception_v2_coco.config \
---trained_checkpoint_prefix training/model.ckpt-<***Check Point Number Here***> \
---output_directory trained-inference-graphs/output_inference_graph_v1
-```
-
-If this command is successful, then the trained inference graph will be created. 
-```bash
-ls trained-inference-graphs/output_inference_graph_v1.pb
-```
-
-2.  Convert Tensorflow model to Tensorflow Lite model.
-```bash
-python3 tensorflow/models/research/object_detection/export_tflite_ssd_graph.py \
-    --input_type=image_tensor \
-    --input_shape={"image_tensor":[1,600,600,3]} \
-    --pipeline_config_path=trained-inference-graphs/output_inference_graph_v1/pipeline.config \
-    --trained_checkpoint_prefix=trained-inference-graphs/output_inference_graph_v1/model.ckpt \
-    --output_directory=trainedTFLite \
-    --add_postprocessing_op=true \
-    --max_detections=10
-```
-
-3. Evaulated the Saved Model using CLI tools.  
-```bash
-saved_model_cli show --dir trained-inference-graphs/output_inference_graph_v1/saved_model --all
-```
-4. Convert Tensorflow model to Tensorflow Lite model with TOCO.
-```bash
-#Convert TF Graphs to TFLite Model
-toco --output_file=trainedModels/LogoObjD.tflite \
-  --graph_def_file=trainedTFLite/tflite_graph.pb \
-  --input_format=TENSORFLOW_GRAPHDEF \
-  --inference_input_type=QUANTIZED_UINT8 \
-  --inference_type=QUANTIZED_UINT8 \
-  --input_arrays=normalized_input_image_tensor \
-  --input_shape=1,300,300,3 \
-  --input_data_type=QUANTIZED_UINT8 \
-  --output_format=TFLITE \
-  --output_arrays='TFLite_Detection_PostProcess','TFLite_Detection_PostProcess:1','TFLite_Detection_PostProcess:2','TFLite_Detection_PostProcess:3'  \
-  --mean_values=128 \
-  --std_dev_values=128 \
-  --default_ranges_min=0 \
-  --default_ranges_max=300 \
-  --allow_custom_ops 
-```
-
-## Compile Tensorflow Lite Model for Edge TPU <a name="EdgeTPU"></a>
- Use [Online Edge TPU Compiler](https://coral.withgoogle.com/web-compiler) to prepare LogoObjD.tflite model for TPU.  If the compiler finishes, then you should see the screen below.  Please note, this project includes the resulting edgetpu.tflite model, which are located in the trainedModel directory. 
-
-![OnlineCompile](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/OnlineCompiler.png)
-
-## Deploy Object Detection Model to a Coral Dev Board <a name="CoralDeploy"></a>
-1. Copy the the edgetpu.tflite file to the Coral Dev board or the model from this project can be downloaded using the following command. This is assuming MDT has been setup: [Coral Board Getting Started.](https://coral.withgoogle.com/docs/dev-board/get-started/)  
-
-```bash
-#On the Coral Dev Board - Copy Model
-wget https://github.com/BrooksIan/LogoTL/raw/master/trainedModels/LogoObjD_<***ID Number Here***>_edgetpu.tflite
-```
-
-2. Deploy the model to Edge TPU
-```bash
-edgetpu_detect_server --model LogoObjD_<***ID Number Here***>_edgetpu.tflite --label label.txt --threshold=0.51
-```
-
-3. Open a web browser to the address: http:// (Coral Dev Board Host Address):(Default Port)
-    
-    Here is an example: http://192.168.1.245:4664/
 
 ![logodetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/LogoDect.gif "logodect")
-
