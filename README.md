@@ -154,8 +154,10 @@ Below are a few different examples, please note the object labels are updated fo
 ## (Optional) Convert TensorFlow Saved Model To TFLite Model <a name="ModelConvert"></a>
 1. Export model 
 ```bash
-./scripts/exportModelTFL.sh
+./scripts/convertTF2TFL.sh
 ```
-![modeltfl](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/model_convertTFL.png)
+![modeltfl](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/exportTFL_graph.png)
+![modeltfl1](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/exportTFL_model.png)
+
 
 ![logodetection](https://github.com/BrooksIan/LogoTL/blob/master/Images/project/LogoDect.gif "logodect")
