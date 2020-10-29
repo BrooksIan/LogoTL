@@ -3,4 +3,5 @@
 ./scripts/imagePrep.sh
 ./scripts/buildModel.sh
 ./scripts/exportModel.sh
+./scripts/exportModelJS.sh
 ##############################
