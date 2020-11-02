@@ -3,8 +3,8 @@ echo '####### Start Project Setup #######'
 
 # Create Anaconda Tensorflow Package
 echo '####### Conda Setup #######'
-#conda create -n tensorflow pip python=3.8
-#conda activate tensorflow
+conda create -n tensorflow pip python=3.8
+conda activate tensorflow
 
 # Install Tensorflow
 echo '  <><><> Install Tensorflow 2 <><><>'
@@ -18,6 +18,8 @@ mkdir tensorflow
 cd tensorflow
 git clone https://github.com/tensorflow/models.git
 
+# Install CV2
+pip install opencv-python 
 
 # Protobuf Installation/Compilation
 # Download Protobuffer Writers
