@@ -13,7 +13,7 @@ The goal of this project is to build a Tensorflow Object Detection model designe
 
 **Requirements**: 
 - Python 3.8
-- Tensorflow 2.2
+- Tensorflow 2.3.1
 
 **Author**: Ian R Brooks
 
