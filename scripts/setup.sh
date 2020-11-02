@@ -18,6 +18,7 @@ echo '  <><><> Object Detection API <><><> '
 mkdir tensorflow
 cd tensorflow
 git clone https://github.com/tensorflow/models.git
+pip install tensorflow-object-detection-api
 
 # Install CV2
 pip install opencv-python 
