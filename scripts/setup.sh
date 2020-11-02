@@ -9,8 +9,8 @@ conda activate tensorflow
 
 # Install Tensorflow
 echo '  <><><> Install Tensorflow 2 <><><>'
-#pip3 install --ignore-installed --upgrade tensorflow==2.2.0
-pip install --ignore-installed --upgrade tensorflow==2.2.0
+#pip3 install --ignore-installed --upgrade tensorflow==2.3.1
+pip install --ignore-installed --upgrade tensorflow==2.3.1
 pip install tensorflowjs
 
 # TensorFlow Object Detection API Installation
