@@ -56,4 +56,4 @@ python3 object_detection/builders/model_builder_tf2_test.py
 # Download Base TF Model
 echo '  <><><> Download Base TF Model  <><><> '
 cd
-#./scripts/downloadModel.sh
+./scripts/downloadModel.sh
