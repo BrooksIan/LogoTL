@@ -4,6 +4,7 @@ echo '####### Start Project Setup #######'
 # Create Anaconda Tensorflow Package
 echo '####### Conda Setup #######'
 conda create -n tensorflow pip python=3.8
+conda init bash
 conda activate tensorflow
 
 # Install Tensorflow
